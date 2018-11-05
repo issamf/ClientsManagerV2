@@ -11,12 +11,15 @@ namespace ContactsManager
     static class Program
     {
         public static List<ContactsManager.Classes.Contact> Contacts = new List<Classes.Contact>();
+        public static Timer timer = new Timer();
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
         [STAThread]
         static void Main()
         {
+            timer.Interval = 1000 * 10;
+            timer.Tick += Timer_Tick;
             LoadSettings();
             LoadContacts();
             if (Settings.Language == "Hebrew")
@@ -34,9 +37,25 @@ namespace ContactsManager
             Application.Run(new frmMain());
         }
 
+        private static void Timer_Tick(object sender, EventArgs e)
+        {
+            //SaveContacts();
+            SyncContacts();
+        }
+
+        private static void SyncContacts()
+        {
+            //throw new NotImplementedException();
+            System.Console.WriteLine("To-Do- Sync!");
+        }
+
         private static void LoadContacts()
         {
             Contacts.Clear();
+            if (!File.Exists(@"c:\temp\contacts.xml"))
+            {
+                return;
+            }
             XDocument doc = XDocument.Load(@"c:\temp\contacts.xml");
             var root = doc.Element("Root");
             var elmContacts = root.Elements("Contact");
