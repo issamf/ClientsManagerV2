@@ -47,6 +47,7 @@
   <ItemGroup>
     <Compile Include="Classes\Address.cs" />
     <Compile Include="Classes\Contact.cs" />
+    <Compile Include="Classes\ContactsCollection.cs" />
     <Compile Include="Forms\frmAddContact.cs">
       <SubType>Form</SubType>
     </Compile>

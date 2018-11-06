@@ -43,7 +43,7 @@
             this.lblPhone3 = new System.Windows.Forms.Label();
             this.txtFax = new System.Windows.Forms.TextBox();
             this.lblFax = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtEmail = new System.Windows.Forms.TextBox();
             this.lblEmail = new System.Windows.Forms.Label();
             this.txtContact = new System.Windows.Forms.TextBox();
             this.lblContact = new System.Windows.Forms.Label();
@@ -55,10 +55,10 @@
             this.clmInternalSerial = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clmPhone1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clmEmail = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtCity = new System.Windows.Forms.TextBox();
             this.lblAddress = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.txtStreet = new System.Windows.Forms.TextBox();
+            this.txtApartment = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -70,6 +70,9 @@
             this.btnClearFields = new System.Windows.Forms.Button();
             this.btnSearch = new System.Windows.Forms.Button();
             this.btnAddNew = new System.Windows.Forms.Button();
+            this.btnSaveChanges = new System.Windows.Forms.Button();
+            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
+            this.label4 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -81,19 +84,19 @@
             // 
             // cmbName
             // 
+            resources.ApplyResources(this.cmbName, "cmbName");
             this.cmbName.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.cmbName.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cmbName.FormattingEnabled = true;
-            resources.ApplyResources(this.cmbName, "cmbName");
             this.cmbName.Name = "cmbName";
             this.cmbName.SelectedIndexChanged += new System.EventHandler(this.cmbName_SelectedIndexChanged);
             this.cmbName.KeyUp += new System.Windows.Forms.KeyEventHandler(this.cmbName_KeyUp);
             // 
             // cmbStatus
             // 
+            resources.ApplyResources(this.cmbStatus, "cmbStatus");
             this.cmbStatus.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.cmbStatus.FormattingEnabled = true;
-            resources.ApplyResources(this.cmbStatus, "cmbStatus");
             this.cmbStatus.Name = "cmbStatus";
             // 
             // lblStatus
@@ -103,10 +106,10 @@
             // 
             // cmbInternalSerial
             // 
+            resources.ApplyResources(this.cmbInternalSerial, "cmbInternalSerial");
             this.cmbInternalSerial.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.cmbInternalSerial.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cmbInternalSerial.FormattingEnabled = true;
-            resources.ApplyResources(this.cmbInternalSerial, "cmbInternalSerial");
             this.cmbInternalSerial.Name = "cmbInternalSerial";
             this.cmbInternalSerial.SelectedIndexChanged += new System.EventHandler(this.cmbInternalSerial_SelectedIndexChanged);
             // 
@@ -155,10 +158,10 @@
             resources.ApplyResources(this.lblFax, "lblFax");
             this.lblFax.Name = "lblFax";
             // 
-            // textBox1
+            // txtEmail
             // 
-            resources.ApplyResources(this.textBox1, "textBox1");
-            this.textBox1.Name = "textBox1";
+            resources.ApplyResources(this.txtEmail, "txtEmail");
+            this.txtEmail.Name = "txtEmail";
             // 
             // lblEmail
             // 
@@ -230,25 +233,25 @@
             this.clmEmail.Name = "clmEmail";
             this.clmEmail.ReadOnly = true;
             // 
-            // textBox2
+            // txtCity
             // 
-            resources.ApplyResources(this.textBox2, "textBox2");
-            this.textBox2.Name = "textBox2";
+            resources.ApplyResources(this.txtCity, "txtCity");
+            this.txtCity.Name = "txtCity";
             // 
             // lblAddress
             // 
             resources.ApplyResources(this.lblAddress, "lblAddress");
             this.lblAddress.Name = "lblAddress";
             // 
-            // textBox3
+            // txtStreet
             // 
-            resources.ApplyResources(this.textBox3, "textBox3");
-            this.textBox3.Name = "textBox3";
+            resources.ApplyResources(this.txtStreet, "txtStreet");
+            this.txtStreet.Name = "txtStreet";
             // 
-            // textBox4
+            // txtApartment
             // 
-            resources.ApplyResources(this.textBox4, "textBox4");
-            this.textBox4.Name = "textBox4";
+            resources.ApplyResources(this.txtApartment, "txtApartment");
+            this.txtApartment.Name = "txtApartment";
             // 
             // label1
             // 
@@ -267,35 +270,35 @@
             // 
             // menuStrip1
             // 
+            resources.ApplyResources(this.menuStrip1, "menuStrip1");
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fileToolStripMenuItem,
             this.toolsToolStripMenuItem,
             this.helpToolStripMenuItem});
-            resources.ApplyResources(this.menuStrip1, "menuStrip1");
             this.menuStrip1.Name = "menuStrip1";
             // 
             // fileToolStripMenuItem
             // 
-            this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
             resources.ApplyResources(this.fileToolStripMenuItem, "fileToolStripMenuItem");
+            this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
             // 
             // toolsToolStripMenuItem
             // 
+            resources.ApplyResources(this.toolsToolStripMenuItem, "toolsToolStripMenuItem");
             this.toolsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.changeLanguageToolStripMenuItem});
             this.toolsToolStripMenuItem.Name = "toolsToolStripMenuItem";
-            resources.ApplyResources(this.toolsToolStripMenuItem, "toolsToolStripMenuItem");
             // 
             // changeLanguageToolStripMenuItem
             // 
-            this.changeLanguageToolStripMenuItem.Name = "changeLanguageToolStripMenuItem";
             resources.ApplyResources(this.changeLanguageToolStripMenuItem, "changeLanguageToolStripMenuItem");
+            this.changeLanguageToolStripMenuItem.Name = "changeLanguageToolStripMenuItem";
             this.changeLanguageToolStripMenuItem.Click += new System.EventHandler(this.changeLanguageToolStripMenuItem_Click);
             // 
             // helpToolStripMenuItem
             // 
-            this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
             resources.ApplyResources(this.helpToolStripMenuItem, "helpToolStripMenuItem");
+            this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
             // 
             // btnClearFields
             // 
@@ -317,26 +320,48 @@
             this.btnAddNew.UseVisualStyleBackColor = true;
             this.btnAddNew.Click += new System.EventHandler(this.btnAddNew_Click);
             // 
+            // btnSaveChanges
+            // 
+            resources.ApplyResources(this.btnSaveChanges, "btnSaveChanges");
+            this.btnSaveChanges.Name = "btnSaveChanges";
+            this.btnSaveChanges.UseVisualStyleBackColor = true;
+            this.btnSaveChanges.Click += new System.EventHandler(this.btnSaveChanges_Click);
+            // 
+            // linkLabel1
+            // 
+            resources.ApplyResources(this.linkLabel1, "linkLabel1");
+            this.linkLabel1.LinkColor = System.Drawing.Color.DodgerBlue;
+            this.linkLabel1.Name = "linkLabel1";
+            this.linkLabel1.TabStop = true;
+            // 
+            // label4
+            // 
+            resources.ApplyResources(this.label4, "label4");
+            this.label4.Name = "label4";
+            // 
             // frmMain
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.linkLabel1);
+            this.Controls.Add(this.btnSaveChanges);
             this.Controls.Add(this.btnAddNew);
             this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.btnClearFields);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.txtApartment);
+            this.Controls.Add(this.txtStreet);
+            this.Controls.Add(this.txtCity);
             this.Controls.Add(this.lblAddress);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.txtNotes);
             this.Controls.Add(this.lblNotes);
             this.Controls.Add(this.txtContact);
             this.Controls.Add(this.lblContact);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtEmail);
             this.Controls.Add(this.lblEmail);
             this.Controls.Add(this.txtFax);
             this.Controls.Add(this.lblFax);
@@ -380,17 +405,17 @@
         private System.Windows.Forms.Label lblPhone3;
         private System.Windows.Forms.TextBox txtFax;
         private System.Windows.Forms.Label lblFax;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.Label lblEmail;
         private System.Windows.Forms.TextBox txtContact;
         private System.Windows.Forms.Label lblContact;
         private System.Windows.Forms.TextBox txtNotes;
         private System.Windows.Forms.Label lblNotes;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtCity;
         private System.Windows.Forms.Label lblAddress;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox txtStreet;
+        private System.Windows.Forms.TextBox txtApartment;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
@@ -407,6 +432,9 @@
         private System.Windows.Forms.Button btnClearFields;
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.Button btnAddNew;
+        private System.Windows.Forms.Button btnSaveChanges;
+        private System.Windows.Forms.LinkLabel linkLabel1;
+        private System.Windows.Forms.Label label4;
     }
 }
 

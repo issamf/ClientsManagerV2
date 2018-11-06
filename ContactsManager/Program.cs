@@ -10,7 +10,7 @@ namespace ContactsManager
 {
     static class Program
     {
-        public static List<ContactsManager.Classes.Contact> Contacts = new List<Classes.Contact>();
+        public static Classes.ContactsCollection Contacts = new Classes.ContactsCollection();
         public static Timer timer = new Timer();
         /// <summary>
         /// The main entry point for the application.
@@ -34,12 +34,13 @@ namespace ContactsManager
             }
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+            timer.Start();
             Application.Run(new frmMain());
         }
 
         private static void Timer_Tick(object sender, EventArgs e)
         {
-            //SaveContacts();
+            SaveContacts();
             SyncContacts();
         }
 
@@ -70,7 +71,7 @@ namespace ContactsManager
         {
             XDocument doc = new XDocument();
             XElement rootElm = new XElement("Root");
-            foreach(var contact in Contacts)
+            foreach(var contact in Contacts.Contacts)
             {
                 rootElm.Add(contact.Save());
             }
