@@ -371,80 +371,88 @@ namespace ContactsManager
         {
             string str = txtSearch.Text.ToLower().Trim();
             List<ContactsManager.Classes.Contact> contacts = new List<Contact>();
-            foreach(var contact in Program.Contacts.Contacts)
+            foreach (var contact in Program.Contacts.Contacts)
             {
-                if (searchOptions.HasFlag(SearchOptions.Any))
-                {
-                    if (contact.Name.ToLower().Trim().Contains(str))
-                    {
-                        contacts.Add(contact);
 
-                    }
-                }
-                else
+                if (searchOptions.HasFlag(SearchOptions.Any) || searchOptions.HasFlag(SearchOptions.Address))
                 {
-                    if (searchOptions.HasFlag(SearchOptions.Address))
+                    if (contact.Address != null)
                     {
                         if (contact.Address.City.ToLower().Trim().Contains(str) ||
                             contact.Address.Street.ToLower().Trim().Contains(str) ||
                             contact.Address.Apartment.ToLower().Trim().Contains(str))
                         {
                             contacts.Add(contact);
-                        }
-                    }
-                    if (searchOptions.HasFlag(SearchOptions.Contact))
-                    {
-                        if (contact.ContactPerson.ToLower().Trim().Contains(str))
-                        {
-                            contacts.Add(contact);
-
-                        }
-                    }
-                    if (searchOptions.HasFlag(SearchOptions.Email))
-                    {
-                        if (contact.Email.ToLower().Trim().Contains(str))
-                        {
-                            contacts.Add(contact);
-
-                        }
-                    }
-                    if (searchOptions.HasFlag(SearchOptions.Name))
-                    {
-                        if (contact.Name.ToLower().Trim().Contains(str))
-                        {
-                            contacts.Add(contact);
-
-                        }
-                    }
-                    if (searchOptions.HasFlag(SearchOptions.Phone))
-                    {
-                        if (contact.Phone1.ToLower().Trim().Contains(str) ||
-                            contact.Phone2.ToLower().Trim().Contains(str) ||
-                            contact.Phone3.ToLower().Trim().Contains(str))
-                        {
-                            contacts.Add(contact);
-
-                        }
-                    }
-                    if (searchOptions.HasFlag(SearchOptions.Serial))
-                    {
-                        if (contact.InternalSerialNumber.ToLower().Trim().Contains(str))
-                        {
-                            contacts.Add(contact);
-
-                        }
-                    }
-                    if (searchOptions.HasFlag(SearchOptions.Status))
-                    {
-                        if (contact.Status.ToLower().Trim().Contains(str))
-                        {
-                            contacts.Add(contact);
-
+                            continue;
                         }
                     }
                 }
+                if (searchOptions.HasFlag(SearchOptions.Any) || searchOptions.HasFlag(SearchOptions.Contact))
+                {
+                    if (contact.ContactPerson.ToLower().Trim().Contains(str))
+                    {
+                        contacts.Add(contact);
+                        continue;
+                    }
+                }
+                if (searchOptions.HasFlag(SearchOptions.Any) || searchOptions.HasFlag(SearchOptions.Email))
+                {
+                    if (contact.Email.ToLower().Trim().Contains(str))
+                    {
+                        contacts.Add(contact);
+                        continue;
+                    }
+                }
+                if (searchOptions.HasFlag(SearchOptions.Any) || searchOptions.HasFlag(SearchOptions.Name))
+                {
+                    if (contact.Name.ToLower().Trim().Contains(str))
+                    {
+                        contacts.Add(contact);
+                        continue;
+                    }
+                }
+                if (searchOptions.HasFlag(SearchOptions.Any) || searchOptions.HasFlag(SearchOptions.Phone))
+                {
+                    if (contact.Phone1.ToLower().Trim().Contains(str) ||
+                        contact.Phone2.ToLower().Trim().Contains(str) ||
+                        contact.Phone3.ToLower().Trim().Contains(str))
+                    {
+                        contacts.Add(contact);
+                        continue;
+                    }
+                }
+                if (searchOptions.HasFlag(SearchOptions.Any) || searchOptions.HasFlag(SearchOptions.Serial))
+                {
+                    if (contact.InternalSerialNumber.ToLower().Trim().Contains(str))
+                    {
+                        contacts.Add(contact);
+                        continue;
+                    }
+                }
+                if (searchOptions.HasFlag(SearchOptions.Any) || searchOptions.HasFlag(SearchOptions.Status))
+                {
+                    if (contact.Status.ToLower().Trim().Contains(str))
+                    {
+                        contacts.Add(contact);
+                        continue;
+                    }
+                }
+
             }
             FillGrid(contacts);
+        }
+
+        private void txtSearch_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                btnSearch.PerformClick();
+            }
+        }
+
+        private void settingsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

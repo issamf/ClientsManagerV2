@@ -36,6 +36,8 @@ namespace ContactsManager.Forms
                 Settings.Language = "English";
             }
             MessageBox.Show("You have to restart the application for changes to take place", "Restart required", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            Program.SaveSettings();
             this.DialogResult = DialogResult.OK;
             this.Close();
         }

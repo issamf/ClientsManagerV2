@@ -83,7 +83,7 @@ namespace ContactsManager.Classes
 
         public void Clear()
         {
-            //contacts.Clear();
+            contacts = new System.Collections.Concurrent.ConcurrentBag<Contact>();
         }
 
         public List<Contact> Contacts

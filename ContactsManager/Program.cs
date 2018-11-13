@@ -12,6 +12,7 @@ namespace ContactsManager
     {
         public static Classes.ContactsCollection Contacts = new Classes.ContactsCollection();
         public static Timer timer = new Timer();
+
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
@@ -42,10 +43,16 @@ namespace ContactsManager
         {
             SaveContacts();
             SyncContacts();
+            LoadContacts();
         }
 
         private static void SyncContacts()
         {
+            if (File.Exists(Settings.SharedDBLocation))
+            {
+                File.Copy(Settings.LocalDBLocation, Settings.LocalDBLocation + ".bak"+DateTime.Now.ToFileTime());
+                File.Copy(Settings.SharedDBLocation, Settings.LocalDBLocation);
+            }
             //throw new NotImplementedException();
             System.Console.WriteLine("To-Do- Sync!");
         }
@@ -53,14 +60,14 @@ namespace ContactsManager
         private static void LoadContacts()
         {
             Contacts.Clear();
-            if (!File.Exists(@"c:\temp\contacts.xml"))
+            if (!File.Exists(Settings.LocalDBLocation))
             {
                 return;
             }
-            XDocument doc = XDocument.Load(@"c:\temp\contacts.xml");
+            XDocument doc = XDocument.Load(Settings.LocalDBLocation);
             var root = doc.Element("Root");
             var elmContacts = root.Elements("Contact");
-            foreach(var elmContact in elmContacts)
+            foreach (var elmContact in elmContacts)
             {
                 ContactsManager.Classes.Contact contact = new Classes.Contact(elmContact);
                 Contacts.Add(contact);
@@ -71,23 +78,27 @@ namespace ContactsManager
         {
             XDocument doc = new XDocument();
             XElement rootElm = new XElement("Root");
-            foreach(var contact in Contacts.Contacts)
+            foreach (var contact in Contacts.Contacts)
             {
                 rootElm.Add(contact.Save());
             }
             doc.Add(rootElm);
-            doc.Save(@"c:\temp\contacts.xml");
+            if (!Directory.Exists(Path.GetDirectoryName(Settings.LocalDBLocation)))
+            {
+                Directory.CreateDirectory(Path.GetDirectoryName(Settings.LocalDBLocation));
+            }
+            doc.Save(Settings.LocalDBLocation);
 
         }
 
         private static void LoadSettings()
         {
-            if (!File.Exists(@"C:\temp\Settings.txt"))
+            if (!File.Exists(Settings.SettingsLocation))
             {
                 Settings.Language = "Hebrew";
                 return;
             }
-            using (StreamReader sr = new StreamReader(@"C:\temp\Settings.txt"))
+            using (StreamReader sr = new StreamReader(Settings.SettingsLocation))
             {
                 string lang = sr.ReadLine();
                 if (lang == "en")
@@ -98,6 +109,19 @@ namespace ContactsManager
                 {
                     Settings.Language = "Hebrew";
                 }
+            }
+        }
+
+        public static void SaveSettings()
+        {
+            if (!Directory.Exists(Path.GetDirectoryName(Settings.SettingsLocation)))
+            {
+                Directory.CreateDirectory(Path.GetDirectoryName(Settings.SettingsLocation));
+            }
+            using (StreamWriter sw = new StreamWriter(Settings.SettingsLocation))
+            {
+                sw.WriteLine(Settings.Language.ToLower().Substring(0, 2));
+                sw.WriteLine(Settings.SharedDBLocation);
             }
         }
     }

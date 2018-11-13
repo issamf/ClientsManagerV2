@@ -280,11 +280,11 @@
   <data name="toolsToolStripMenuItem.Text" xml:space="preserve">
     <value>&amp;כלים</value>
   </data>
-  <data name="changeLanguageToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>125, 22</value>
-  </data>
   <data name="changeLanguageToolStripMenuItem.Text" xml:space="preserve">
     <value>שינוי ש&amp;פה</value>
+  </data>
+  <data name="settingsToolStripMenuItem.Text" xml:space="preserve">
+    <value>ה&amp;גדרות</value>
   </data>
   <data name="helpToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>45, 20</value>

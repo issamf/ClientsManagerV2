@@ -9,5 +9,8 @@ namespace ContactsManager
     public static class Settings
     {
         public static string Language { get; set; } = "Hebrew";
+        public static string SharedDBLocation { get; set; } = @"K:\ContactsManager\Contacts.xml";
+        public static string LocalDBLocation { get; set; } = @"C:\temp\ContactsManager\Contacts.xml";
+        public static string SettingsLocation { get; set; } = @"C:\temp\ContactsManager\Settings.txt";
     }
 }
