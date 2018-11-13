@@ -66,6 +66,12 @@
     <Compile Include="Forms\frmChooseLanguage.Designer.cs">
       <DependentUpon>frmChooseLanguage.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\frmSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmSearch.Designer.cs">
+      <DependentUpon>frmSearch.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmMain.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -92,6 +98,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmChooseLanguage.resx">
       <DependentUpon>frmChooseLanguage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmSearch.he-IL.resx">
+      <DependentUpon>frmSearch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmSearch.resx">
+      <DependentUpon>frmSearch.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmMain.he-IL.resx">
       <DependentUpon>frmMain.cs</DependentUpon>

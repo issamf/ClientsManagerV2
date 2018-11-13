@@ -15,6 +15,20 @@ namespace ContactsManager
 {
     public partial class frmMain : Form
     {
+        [Flags]
+        public enum SearchOptions
+        {
+            Any = 1,
+            Name = 2,
+            Serial = 4,
+            Status = 8,
+            Phone = 16,
+            Address = 32,
+            Contact = 64,
+            Email = 128
+        }
+
+        public SearchOptions searchOptions = SearchOptions.Any;
         BindingSource bindingSource = new BindingSource();
         public delegate void ContactChangedHandler(ContactsManager.Classes.Contact newContact);
         protected event ContactChangedHandler ContactChanged;
@@ -237,7 +251,22 @@ namespace ContactsManager
                 txtPhone1.Text = contact.Phone1;
                 txtPhone2.Text = contact.Phone2;
                 txtPhone3.Text = contact.Phone3;
+            }
+            FillGrid(Program.Contacts.Contacts);
+        }
 
+        private void FillGrid(List<Contact> contacts)
+        {
+            dataGridView1.Rows.Clear();
+            foreach (var contact in contacts)
+            {
+                dataGridView1.Rows.Add(new object[] {
+                contact.Name,
+                contact.Status,
+                contact.InternalSerialNumber,
+                contact.Phone1,
+                contact.Email
+                });
             }
         }
 
@@ -285,11 +314,6 @@ namespace ContactsManager
             frmEdit.Dispose();
         }
 
-        private void btnSearch_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             if (CurrentContact == null)
@@ -320,6 +344,107 @@ namespace ContactsManager
                     e.Cancel = true;
                 }
             }
+        }
+
+        private void dataGridView1_DoubleClick(object sender, EventArgs e)
+        {
+            if (dataGridView1.SelectedRows != null)
+            {
+                var contact = Program.Contacts.Get(dataGridView1.SelectedRows[0].Cells[clmName.Name].Value.ToString(), dataGridView1.SelectedRows[0].Cells[clmInternalSerial.Name].Value.ToString());
+                if (contact != null)
+                {
+                    CurrentContact = contact;
+                }
+            }
+        }
+
+        private void lblSearchOptions_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            using (var options = new frmSearch(searchOptions))
+            {
+                options.ShowDialog();
+                searchOptions = options.Options;
+            }
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            string str = txtSearch.Text.ToLower().Trim();
+            List<ContactsManager.Classes.Contact> contacts = new List<Contact>();
+            foreach(var contact in Program.Contacts.Contacts)
+            {
+                if (searchOptions.HasFlag(SearchOptions.Any))
+                {
+                    if (contact.Name.ToLower().Trim().Contains(str))
+                    {
+                        contacts.Add(contact);
+
+                    }
+                }
+                else
+                {
+                    if (searchOptions.HasFlag(SearchOptions.Address))
+                    {
+                        if (contact.Address.City.ToLower().Trim().Contains(str) ||
+                            contact.Address.Street.ToLower().Trim().Contains(str) ||
+                            contact.Address.Apartment.ToLower().Trim().Contains(str))
+                        {
+                            contacts.Add(contact);
+                        }
+                    }
+                    if (searchOptions.HasFlag(SearchOptions.Contact))
+                    {
+                        if (contact.ContactPerson.ToLower().Trim().Contains(str))
+                        {
+                            contacts.Add(contact);
+
+                        }
+                    }
+                    if (searchOptions.HasFlag(SearchOptions.Email))
+                    {
+                        if (contact.Email.ToLower().Trim().Contains(str))
+                        {
+                            contacts.Add(contact);
+
+                        }
+                    }
+                    if (searchOptions.HasFlag(SearchOptions.Name))
+                    {
+                        if (contact.Name.ToLower().Trim().Contains(str))
+                        {
+                            contacts.Add(contact);
+
+                        }
+                    }
+                    if (searchOptions.HasFlag(SearchOptions.Phone))
+                    {
+                        if (contact.Phone1.ToLower().Trim().Contains(str) ||
+                            contact.Phone2.ToLower().Trim().Contains(str) ||
+                            contact.Phone3.ToLower().Trim().Contains(str))
+                        {
+                            contacts.Add(contact);
+
+                        }
+                    }
+                    if (searchOptions.HasFlag(SearchOptions.Serial))
+                    {
+                        if (contact.InternalSerialNumber.ToLower().Trim().Contains(str))
+                        {
+                            contacts.Add(contact);
+
+                        }
+                    }
+                    if (searchOptions.HasFlag(SearchOptions.Status))
+                    {
+                        if (contact.Status.ToLower().Trim().Contains(str))
+                        {
+                            contacts.Add(contact);
+
+                        }
+                    }
+                }
+            }
+            FillGrid(contacts);
         }
     }
 }

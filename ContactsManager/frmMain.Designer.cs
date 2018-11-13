@@ -75,6 +75,9 @@
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.label4 = new System.Windows.Forms.Label();
             this.linkLabel2 = new System.Windows.Forms.LinkLabel();
+            this.txtSearch = new System.Windows.Forms.TextBox();
+            this.lblSearchOptions = new System.Windows.Forms.LinkLabel();
+            this.lnkClearSearch = new System.Windows.Forms.LinkLabel();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -86,19 +89,19 @@
             // 
             // cmbName
             // 
-            resources.ApplyResources(this.cmbName, "cmbName");
             this.cmbName.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.cmbName.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cmbName.FormattingEnabled = true;
+            resources.ApplyResources(this.cmbName, "cmbName");
             this.cmbName.Name = "cmbName";
             this.cmbName.SelectedIndexChanged += new System.EventHandler(this.cmbName_SelectedIndexChanged);
             this.cmbName.KeyUp += new System.Windows.Forms.KeyEventHandler(this.cmbName_KeyUp);
             // 
             // cmbStatus
             // 
-            resources.ApplyResources(this.cmbStatus, "cmbStatus");
             this.cmbStatus.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.cmbStatus.FormattingEnabled = true;
+            resources.ApplyResources(this.cmbStatus, "cmbStatus");
             this.cmbStatus.Name = "cmbStatus";
             // 
             // lblStatus
@@ -108,10 +111,10 @@
             // 
             // cmbInternalSerial
             // 
-            resources.ApplyResources(this.cmbInternalSerial, "cmbInternalSerial");
             this.cmbInternalSerial.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.cmbInternalSerial.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cmbInternalSerial.FormattingEnabled = true;
+            resources.ApplyResources(this.cmbInternalSerial, "cmbInternalSerial");
             this.cmbInternalSerial.Name = "cmbInternalSerial";
             this.cmbInternalSerial.SelectedIndexChanged += new System.EventHandler(this.cmbInternalSerial_SelectedIndexChanged);
             // 
@@ -201,9 +204,12 @@
             this.clmInternalSerial,
             this.clmPhone1,
             this.clmEmail});
+            this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersVisible = false;
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView1.DoubleClick += new System.EventHandler(this.dataGridView1_DoubleClick);
             // 
             // clmName
             // 
@@ -272,43 +278,43 @@
             // 
             // menuStrip1
             // 
-            resources.ApplyResources(this.menuStrip1, "menuStrip1");
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fileToolStripMenuItem,
             this.toolsToolStripMenuItem,
             this.helpToolStripMenuItem});
+            resources.ApplyResources(this.menuStrip1, "menuStrip1");
             this.menuStrip1.Name = "menuStrip1";
             // 
             // fileToolStripMenuItem
             // 
-            resources.ApplyResources(this.fileToolStripMenuItem, "fileToolStripMenuItem");
             this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.exitToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
+            resources.ApplyResources(this.fileToolStripMenuItem, "fileToolStripMenuItem");
             // 
             // exitToolStripMenuItem
             // 
-            resources.ApplyResources(this.exitToolStripMenuItem, "exitToolStripMenuItem");
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
+            resources.ApplyResources(this.exitToolStripMenuItem, "exitToolStripMenuItem");
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
             // toolsToolStripMenuItem
             // 
-            resources.ApplyResources(this.toolsToolStripMenuItem, "toolsToolStripMenuItem");
             this.toolsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.changeLanguageToolStripMenuItem});
             this.toolsToolStripMenuItem.Name = "toolsToolStripMenuItem";
+            resources.ApplyResources(this.toolsToolStripMenuItem, "toolsToolStripMenuItem");
             // 
             // changeLanguageToolStripMenuItem
             // 
-            resources.ApplyResources(this.changeLanguageToolStripMenuItem, "changeLanguageToolStripMenuItem");
             this.changeLanguageToolStripMenuItem.Name = "changeLanguageToolStripMenuItem";
+            resources.ApplyResources(this.changeLanguageToolStripMenuItem, "changeLanguageToolStripMenuItem");
             this.changeLanguageToolStripMenuItem.Click += new System.EventHandler(this.changeLanguageToolStripMenuItem_Click);
             // 
             // helpToolStripMenuItem
             // 
-            resources.ApplyResources(this.helpToolStripMenuItem, "helpToolStripMenuItem");
             this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
+            resources.ApplyResources(this.helpToolStripMenuItem, "helpToolStripMenuItem");
             // 
             // btnClearFields
             // 
@@ -360,10 +366,33 @@
             this.linkLabel2.TabStop = true;
             this.linkLabel2.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel2_LinkClicked);
             // 
+            // txtSearch
+            // 
+            resources.ApplyResources(this.txtSearch, "txtSearch");
+            this.txtSearch.Name = "txtSearch";
+            // 
+            // lblSearchOptions
+            // 
+            resources.ApplyResources(this.lblSearchOptions, "lblSearchOptions");
+            this.lblSearchOptions.LinkColor = System.Drawing.Color.DodgerBlue;
+            this.lblSearchOptions.Name = "lblSearchOptions";
+            this.lblSearchOptions.TabStop = true;
+            this.lblSearchOptions.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lblSearchOptions_LinkClicked);
+            // 
+            // lnkClearSearch
+            // 
+            resources.ApplyResources(this.lnkClearSearch, "lnkClearSearch");
+            this.lnkClearSearch.LinkColor = System.Drawing.Color.DodgerBlue;
+            this.lnkClearSearch.Name = "lnkClearSearch";
+            this.lnkClearSearch.TabStop = true;
+            // 
             // frmMain
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.lnkClearSearch);
+            this.Controls.Add(this.lblSearchOptions);
+            this.Controls.Add(this.txtSearch);
             this.Controls.Add(this.linkLabel2);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.linkLabel1);
@@ -460,6 +489,9 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.LinkLabel linkLabel2;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
+        private System.Windows.Forms.TextBox txtSearch;
+        private System.Windows.Forms.LinkLabel lblSearchOptions;
+        private System.Windows.Forms.LinkLabel lnkClearSearch;
     }
 }
 

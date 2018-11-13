@@ -46,6 +46,18 @@ namespace ContactsManager.Classes
             return null;
         }
 
+        public Contact Get(string name, string serialNum)
+        {
+            foreach (var contact in contacts)
+            {
+                if (contact.Name.ToLower().Trim() == name.ToLower().Trim() &&
+                    contact.InternalSerialNumber.ToLower().Trim() == serialNum.ToLower().Trim())
+                {
+                    return contact;
+                }
+            }
+            return null;
+        }
         //public BindingSource bindingSource = new BindingSource();
         public bool Add(Contact contact)
         {

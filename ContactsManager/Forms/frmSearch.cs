@@ -1,0 +1,90 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace ContactsManager.Forms
+{
+    public partial class frmSearch : Form
+    {
+        public frmMain.SearchOptions Options = frmMain.SearchOptions.Any;
+        public frmSearch(frmMain.SearchOptions options)
+        {
+            InitializeComponent();
+            this.Options = options;
+            chkAny.Checked = options.HasFlag(frmMain.SearchOptions.Any);
+            if (!chkAny.Checked)
+            {
+                chkAddress.Checked = options.HasFlag(frmMain.SearchOptions.Address);
+                chkContact.Checked = options.HasFlag(frmMain.SearchOptions.Contact);
+                chkEmail.Checked = options.HasFlag(frmMain.SearchOptions.Email);
+                chkName.Checked = options.HasFlag(frmMain.SearchOptions.Name);
+                chkPhone.Checked = options.HasFlag(frmMain.SearchOptions.Phone);
+                chkSerial.Checked = options.HasFlag(frmMain.SearchOptions.Serial);
+                chkStatus.Checked = options.HasFlag(frmMain.SearchOptions.Status);
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Options = 0;
+            if (chkAny.Checked)
+            {
+                Options = frmMain.SearchOptions.Any;
+            }
+            else
+            {
+                if (chkAddress.Checked) Options |= frmMain.SearchOptions.Address;
+                if (chkContact.Checked) Options |= frmMain.SearchOptions.Contact;
+                if (chkEmail.Checked) Options |= frmMain.SearchOptions.Email;
+                if (chkName.Checked) Options |= frmMain.SearchOptions.Name;
+                if (chkSerial.Checked) Options |= frmMain.SearchOptions.Serial;
+                if (chkPhone.Checked) Options |= frmMain.SearchOptions.Phone;
+                if (chkStatus.Checked) Options |= frmMain.SearchOptions.Status;
+            }
+            this.Close();
+        }
+
+        private void chkOther_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chkAny.Checked)
+            {
+                chkAny.CheckedChanged -= chkAny_CheckedChanged;
+                chkAny.Checked = false;
+                chkAny.CheckedChanged += chkAny_CheckedChanged;
+            }
+        }
+
+        private void chkAny_CheckedChanged(object sender, EventArgs e)
+        {
+            chkAddress.CheckedChanged -= chkOther_CheckedChanged;
+            chkContact.CheckedChanged -= chkOther_CheckedChanged;
+            chkEmail.CheckedChanged -= chkOther_CheckedChanged;
+            chkName.CheckedChanged -= chkOther_CheckedChanged;
+            chkPhone.CheckedChanged -= chkOther_CheckedChanged;
+            chkSerial.CheckedChanged -= chkOther_CheckedChanged;
+            chkStatus.CheckedChanged -= chkOther_CheckedChanged;
+
+            chkAddress.Checked = false;
+            chkContact.Checked = false;
+            chkEmail.Checked = false;
+            chkName.Checked = false;
+            chkPhone.Checked = false;
+            chkSerial.Checked = false;
+            chkStatus.Checked = false;
+
+            chkAddress.CheckedChanged += chkOther_CheckedChanged;
+            chkContact.CheckedChanged += chkOther_CheckedChanged;
+            chkEmail.CheckedChanged += chkOther_CheckedChanged;
+            chkName.CheckedChanged += chkOther_CheckedChanged;
+            chkPhone.CheckedChanged += chkOther_CheckedChanged;
+            chkSerial.CheckedChanged += chkOther_CheckedChanged;
+            chkStatus.CheckedChanged += chkOther_CheckedChanged;
+        }
+    }
+}

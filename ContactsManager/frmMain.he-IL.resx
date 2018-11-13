@@ -191,7 +191,7 @@
     <value>449, 148</value>
   </data>
   <data name="txtNotes.Size" type="System.Drawing.Size, System.Drawing">
-    <value>610, 134</value>
+    <value>610, 244</value>
   </data>
   <data name="lblNotes.Location" type="System.Drawing.Point, System.Drawing">
     <value>446, 128</value>
@@ -268,6 +268,9 @@
   <data name="fileToolStripMenuItem.Text" xml:space="preserve">
     <value>&amp;קובץ</value>
   </data>
+  <data name="exitToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>103, 22</value>
+  </data>
   <data name="exitToolStripMenuItem.Text" xml:space="preserve">
     <value>י&amp;ציאה</value>
   </data>
@@ -289,8 +292,14 @@
   <data name="helpToolStripMenuItem.Text" xml:space="preserve">
     <value>&amp;עזרה</value>
   </data>
+  <data name="btnClearFields.Location" type="System.Drawing.Point, System.Drawing">
+    <value>313, 369</value>
+  </data>
   <data name="btnClearFields.Text" xml:space="preserve">
     <value>נקה</value>
+  </data>
+  <data name="btnSearch.Location" type="System.Drawing.Point, System.Drawing">
+    <value>217, 369</value>
   </data>
   <data name="btnSearch.Text" xml:space="preserve">
     <value>חיפוש</value>
@@ -324,6 +333,12 @@
   </data>
   <data name="linkLabel2.Text" xml:space="preserve">
     <value>עריכה</value>
+  </data>
+  <data name="lblSearchOptions.Size" type="System.Drawing.Size, System.Drawing">
+    <value>95, 13</value>
+  </data>
+  <data name="lblSearchOptions.Text" xml:space="preserve">
+    <value>אפשרויות חיפוש</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
