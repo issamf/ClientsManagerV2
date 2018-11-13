@@ -20,29 +20,60 @@ namespace ContactsManager
         protected event ContactChangedHandler ContactChanged;
         protected void OnContactChanged(ContactsManager.Classes.Contact newContact)
         {
-            cmbName.SelectedIndexChanged -= cmbName_SelectedIndexChanged;
-            cmbInternalSerial.SelectedIndexChanged -= cmbInternalSerial_SelectedIndexChanged;
-            cmbName.SelectedItem = newContact;
-            cmbInternalSerial.SelectedItem = newContact;
-            cmbStatus.SelectedItem = newContact.Status;
-            //txtContact.DataBindings.Clear();
-            //txtContact.DataBindings.Add("Text", newContact, "ContactPerson");
-            txtContact.Text = newContact.ContactPerson;
-            txtFax.Text = newContact.Fax;
-            txtEmail.Text = newContact.Email;
-            txtCity.Text = newContact.Address?.City; txtStreet.Text = newContact.Address?.Street; txtApartment.Text = newContact.Address?.Apartment;
-            txtNotes.Text = newContact.Notes;
-            txtPhone1.Text = newContact.Phone1;
-            txtPhone2.Text = newContact.Phone2;
-            txtPhone3.Text = newContact.Phone3;
-
-
-
-            cmbName.SelectedIndexChanged += cmbName_SelectedIndexChanged;
-            cmbInternalSerial.SelectedIndexChanged += cmbInternalSerial_SelectedIndexChanged;
-            if (ContactChanged != null)
+            if (newContact != null)
             {
-                ContactChanged(newContact);
+                cmbName.SelectedIndexChanged -= cmbName_SelectedIndexChanged;
+                cmbInternalSerial.SelectedIndexChanged -= cmbInternalSerial_SelectedIndexChanged;
+                cmbName.SelectedItem = newContact;
+                cmbInternalSerial.SelectedItem = newContact;
+                cmbStatus.SelectedItem = newContact.Status;
+                //txtContact.DataBindings.Clear();
+                //txtContact.DataBindings.Add("Text", newContact, "ContactPerson");
+                txtContact.Text = newContact.ContactPerson;
+                txtFax.Text = newContact.Fax;
+                txtEmail.Text = newContact.Email;
+                txtCity.Text = newContact.Address?.City; txtStreet.Text = newContact.Address?.Street; txtApartment.Text = newContact.Address?.Apartment;
+                txtNotes.Text = newContact.Notes;
+                txtPhone1.Text = newContact.Phone1;
+                txtPhone2.Text = newContact.Phone2;
+                txtPhone3.Text = newContact.Phone3;
+
+
+
+                cmbName.SelectedIndexChanged += cmbName_SelectedIndexChanged;
+                cmbInternalSerial.SelectedIndexChanged += cmbInternalSerial_SelectedIndexChanged;
+                if (ContactChanged != null)
+                {
+                    ContactChanged(newContact);
+                }
+            }
+            else
+            {
+                cmbName.SelectedIndexChanged -= cmbName_SelectedIndexChanged;
+                cmbInternalSerial.SelectedIndexChanged -= cmbInternalSerial_SelectedIndexChanged;
+                cmbName.SelectedIndex = -1;
+                cmbInternalSerial.SelectedIndex = -1;
+                cmbStatus.SelectedIndex =-1;
+                //txtContact.DataBindings.Clear();
+                //txtContact.DataBindings.Add("Text", newContact, "ContactPerson");
+                txtContact.Text = "";
+                txtFax.Text = "";
+                txtEmail.Text = "";
+                txtCity.Text = ""; txtStreet.Text = ""; txtApartment.Text = "";
+                txtNotes.Text = "";
+                txtPhone1.Text = "";
+                txtPhone2.Text = "";
+                txtPhone3.Text = "";
+
+
+
+                cmbName.SelectedIndexChanged += cmbName_SelectedIndexChanged;
+                cmbInternalSerial.SelectedIndexChanged += cmbInternalSerial_SelectedIndexChanged;
+                if (ContactChanged != null)
+                {
+                    ContactChanged(newContact);
+                }
+
             }
         }
 
@@ -66,12 +97,13 @@ namespace ContactsManager
 
         private void changeLanguageToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var frmLang = new Forms.frmChooseLanguage();
-            if (frmLang.ShowDialog() == DialogResult.OK)
+            using (var frmLang = new Forms.frmChooseLanguage())
             {
-                ChangeLanguage(Settings.Language);
+                if (frmLang.ShowDialog() == DialogResult.OK)
+                {
+                    ChangeLanguage(Settings.Language);
+                }
             }
-            frmLang.Dispose();
         }
 
         private void ChangeLanguage(string language)
@@ -95,7 +127,7 @@ namespace ContactsManager
 
         private void btnClearFields_Click(object sender, EventArgs e)
         {
-
+            CurrentContact = null;
             foreach (Control c in this.Controls)
             {
                 if (c is TextBox || c is ComboBox)
@@ -144,27 +176,29 @@ namespace ContactsManager
 
         private void cmbName_KeyUp(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.Enter)
-            {
-                if (!cmbName.Items.Contains(cmbName.Text))
-                {
-                    MessageBox.Show("New Name!");
-                    cmbName.Items.Add(cmbName.Text);
-                }
-            }
+            //if (e.KeyCode == Keys.Enter)
+            //{
+            //    if (!cmbName.Items.Contains(cmbName.Text))
+            //    {
+            //        MessageBox.Show("New Name!");
+            //        cmbName.Items.Add(cmbName.Text);
+            //    }
+            //}
         }
 
         private void btnAddNew_Click(object sender, EventArgs e)
         {
-            var frmAdd = new frmAddContact();
-            if (frmAdd.ShowDialog() == DialogResult.OK)
+            
+            using (var frmAdd = new frmAddEditContact())
             {
-                ContactsManager.Program.Contacts.Add(frmAdd.Contact);
-                FillFields();
-            }
+                if (frmAdd.ShowDialog() == DialogResult.OK)
+                {
+                    ContactsManager.Program.Contacts.Add(frmAdd.Contact);
+                    FillFields();
+                }
 
-            CurrentContact = frmAdd.Contact;
-            frmAdd.Dispose();
+                CurrentContact = frmAdd.Contact;
+            }
         }
 
         private void frmMain_Load(object sender, EventArgs e)
@@ -191,7 +225,7 @@ namespace ContactsManager
             {
                 cmbName.Items.Add(contact);
                 cmbInternalSerial.Items.Add(contact);
-                if (!cmbStatus.Items.Contains(contact.Status))
+                if (!cmbStatus.Items.Contains(contact.Status) && contact.Status.Trim() != "")
                 {
                     cmbStatus.Items.Add(contact.Status);
                 }
@@ -209,19 +243,83 @@ namespace ContactsManager
 
         private void btnSaveChanges_Click(object sender, EventArgs e)
         {
+            if (CurrentContact == null)
+            {
+                return;
+            }
+            using (frmAreYouSure ask = new frmAreYouSure())
+            {
+                if (ask.ShowDialog() == DialogResult.No)
+                {
+                    return;
+                }
+            }
             //txtContact.DataBindings.Add("Text",)
             //CurrentContact.Name = cmbName.Text;
             //CurrentContact.InternalSerialNumber = cmbInternalSerial.Text;
-            CurrentContact.ContactPerson = txtContact.Text;
-            CurrentContact.Fax = txtFax.Text;
-            CurrentContact.Email = txtEmail.Text;
-            CurrentContact.Address = new Address(txtCity.Text, txtStreet.Text, txtApartment.Text);
-            CurrentContact.InternalSerialNumber = cmbInternalSerial.Text;
-            CurrentContact.Notes = txtNotes.Text;
-            CurrentContact.Status = cmbStatus.Text;
-            CurrentContact.Phone1 = txtPhone1.Text;
-            CurrentContact.Phone2 = txtPhone2.Text;
-            CurrentContact.Phone3 = txtPhone3.Text;
+            CurrentContact.ContactPerson = txtContact.Text.Trim();
+            CurrentContact.Fax = txtFax.Text.Trim();
+            CurrentContact.Email = txtEmail.Text.Trim();
+            CurrentContact.Address = new Address(txtCity.Text.Trim(), txtStreet.Text.Trim(), txtApartment.Text.Trim());
+            CurrentContact.InternalSerialNumber = cmbInternalSerial.Text.Trim();
+            CurrentContact.Notes = txtNotes.Text.Trim();
+            CurrentContact.Status = cmbStatus.Text.Trim();
+            CurrentContact.Phone1 = txtPhone1.Text.Trim();
+            CurrentContact.Phone2 = txtPhone2.Text.Trim();
+            CurrentContact.Phone3 = txtPhone3.Text.Trim();
+        }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            if (CurrentContact == null)
+            {
+                return;
+            }
+            var frmEdit = new frmAddEditContact(CurrentContact);
+            if (frmEdit.ShowDialog() == DialogResult.OK)
+            {
+                FillFields();
+            }
+
+            CurrentContact = frmEdit.Contact;
+            frmEdit.Dispose();
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            if (CurrentContact == null)
+            {
+                return;
+            }
+            var frmEdit = new frmAddEditContact(CurrentContact);
+            if (frmEdit.ShowDialog() == DialogResult.OK)
+            {
+                FillFields();
+            }
+
+            CurrentContact = frmEdit.Contact;
+            frmEdit.Dispose();
+        }
+
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void frmMain_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            using (var ask = new frmAreYouSure())
+            {
+                if (ask.ShowDialog() == DialogResult.No)
+                {
+                    e.Cancel = true;
+                }
+            }
         }
     }
 }

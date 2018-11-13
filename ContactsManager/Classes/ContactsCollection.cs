@@ -22,6 +22,29 @@ namespace ContactsManager.Classes
         //    }
         //}
 
+        public Contact GetByName(string name)
+        {
+            foreach(var contact in contacts)
+            {
+                if (contact.Name.ToLower().Trim() == name.ToLower().Trim())
+                {
+                    return contact;
+                }
+            }
+            return null;
+        }
+
+        public Contact GetBySerial(string serialNum)
+        {
+            foreach (var contact in contacts)
+            {
+                if (contact.InternalSerialNumber.ToLower().Trim() == serialNum.ToLower().Trim())
+                {
+                    return contact;
+                }
+            }
+            return null;
+        }
 
         //public BindingSource bindingSource = new BindingSource();
         public bool Add(Contact contact)

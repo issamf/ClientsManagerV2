@@ -21,10 +21,13 @@ namespace ContactsManager.Classes
         public Address Address { get; set; } = null;
         public string Fax { get; set; } = "";
 
-        public Contact(string name, string status, string internalSerialNumber)
+        public Contact()
+        {
+
+        }
+        public Contact(string name, string internalSerialNumber):this()
         {
             Name = name;
-            Status = status;
             InternalSerialNumber = internalSerialNumber;
         }
         public XElement Save()

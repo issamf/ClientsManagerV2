@@ -10,22 +10,33 @@ using System.Windows.Forms;
 
 namespace ContactsManager.Forms
 {
-    public partial class frmAddContact : Form
+    public partial class frmAddEditContact : Form
     {
         public ContactsManager.Classes.Contact Contact = null;
-        public frmAddContact()
+        public frmAddEditContact(ContactsManager.Classes.Contact contact = null)
         {
             InitializeComponent();
+            if (contact != null)
+            {
+                Contact = contact;
+                txtName.Text = Contact.Name;
+                txtInternalSerial.Text = Contact.InternalSerialNumber;
+            }
+            else
+            {
+                Contact = new Classes.Contact();
+            }
         }
 
         private void btnOK_Click(object sender, EventArgs e)
         {
-            if (cmbName.Text == "" || cmbStatus.Text == "" || cmbInternalSerial.Text == "")
+            if (txtName.Text == "" || txtInternalSerial.Text == "")
             {
                 MessageBox.Show("Some fields are not filled");
                 return;
             }
-            Contact = new Classes.Contact(cmbName.Text, cmbStatus.Text, cmbInternalSerial.Text);
+            Contact.Name = txtName.Text.Trim();
+            Contact.InternalSerialNumber = txtInternalSerial.Text.Trim();
             this.DialogResult = DialogResult.OK;
             this.Close();
         }

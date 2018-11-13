@@ -1,6 +1,6 @@
 ﻿namespace ContactsManager.Forms
 {
-    partial class frmAddContact
+    partial class frmAddEditContact
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAddContact));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAddEditContact));
             this.lblInternalSerial = new System.Windows.Forms.Label();
             this.lblName = new System.Windows.Forms.Label();
             this.btnOK = new System.Windows.Forms.Button();
@@ -57,6 +57,7 @@
             // btnCancel
             // 
             resources.ApplyResources(this.btnCancel, "btnCancel");
+            this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
@@ -71,17 +72,20 @@
             resources.ApplyResources(this.txtInternalSerial, "txtInternalSerial");
             this.txtInternalSerial.Name = "txtInternalSerial";
             // 
-            // frmAddContact
+            // frmAddEditContact
             // 
+            this.AcceptButton = this.btnOK;
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.btnCancel;
             this.Controls.Add(this.txtInternalSerial);
             this.Controls.Add(this.txtName);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnOK);
             this.Controls.Add(this.lblInternalSerial);
             this.Controls.Add(this.lblName);
-            this.Name = "frmAddContact";
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.Name = "frmAddEditContact";
             this.ResumeLayout(false);
             this.PerformLayout();
 

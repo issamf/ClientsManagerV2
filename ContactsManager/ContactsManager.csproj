@@ -48,11 +48,17 @@
     <Compile Include="Classes\Address.cs" />
     <Compile Include="Classes\Contact.cs" />
     <Compile Include="Classes\ContactsCollection.cs" />
-    <Compile Include="Forms\frmAddContact.cs">
+    <Compile Include="Forms\frmAddEditContact.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\frmAddContact.Designer.cs">
-      <DependentUpon>frmAddContact.cs</DependentUpon>
+    <Compile Include="Forms\frmAddEditContact.Designer.cs">
+      <DependentUpon>frmAddEditContact.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmAreYouSure.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmAreYouSure.Designer.cs">
+      <DependentUpon>frmAreYouSure.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\frmChooseLanguage.cs">
       <SubType>Form</SubType>
@@ -69,11 +75,17 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Settings.cs" />
-    <EmbeddedResource Include="Forms\frmAddContact.he-IL.resx">
-      <DependentUpon>frmAddContact.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\frmAddEditContact.he-IL.resx">
+      <DependentUpon>frmAddEditContact.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\frmAddContact.resx">
-      <DependentUpon>frmAddContact.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\frmAddEditContact.resx">
+      <DependentUpon>frmAddEditContact.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmAreYouSure.he-IL.resx">
+      <DependentUpon>frmAreYouSure.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmAreYouSure.resx">
+      <DependentUpon>frmAreYouSure.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmChooseLanguage.he-IL.resx">
       <DependentUpon>frmChooseLanguage.cs</DependentUpon>
