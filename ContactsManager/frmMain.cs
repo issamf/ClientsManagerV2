@@ -46,7 +46,7 @@ namespace ContactsManager
                 txtContact.Text = newContact.ContactPerson;
                 txtFax.Text = newContact.Fax;
                 txtEmail.Text = newContact.Email;
-                txtCity.Text = newContact.Address?.City; txtStreet.Text = newContact.Address?.Street; txtApartment.Text = newContact.Address?.Apartment;
+                txtCity.Text = newContact.Address?.City; txtStreet.Text = newContact.Address?.Street; txtApartment.Text = newContact.Address?.ZipCode;
                 txtNotes.Text = newContact.Notes;
                 txtPhone1.Text = newContact.Phone1;
                 txtPhone2.Text = newContact.Phone2;
@@ -203,16 +203,6 @@ namespace ContactsManager
         private void btnAddNew_Click(object sender, EventArgs e)
         {
             
-            using (var frmAdd = new frmAddEditContact())
-            {
-                if (frmAdd.ShowDialog() == DialogResult.OK)
-                {
-                    ContactsManager.Program.Contacts.Add(frmAdd.Contact);
-                    FillFields();
-                }
-
-                CurrentContact = frmAdd.Contact;
-            }
         }
 
         private void frmMain_Load(object sender, EventArgs e)
@@ -246,7 +236,7 @@ namespace ContactsManager
                 txtContact.Text = contact.ContactPerson;
                 txtFax.Text = contact.Fax;
                 txtEmail.Text = contact.Email;
-                txtCity.Text = contact.Address?.City; txtStreet.Text = contact.Address?.Street; txtApartment.Text = contact.Address?.Apartment;
+                txtCity.Text = contact.Address?.City; txtStreet.Text = contact.Address?.Street; txtApartment.Text = contact.Address?.ZipCode;
                 txtNotes.Text = contact.Notes;
                 txtPhone1.Text = contact.Phone1;
                 txtPhone2.Text = contact.Phone2;
@@ -257,17 +247,13 @@ namespace ContactsManager
 
         private void FillGrid(List<Contact> contacts)
         {
-            dataGridView1.Rows.Clear();
-            foreach (var contact in contacts)
-            {
-                dataGridView1.Rows.Add(new object[] {
-                contact.Name,
-                contact.Status,
-                contact.InternalSerialNumber,
-                contact.Phone1,
-                contact.Email
-                });
-            }
+            dataGridView1.DataSource = null;
+            dataGridView1.DataSource = contacts;
+            //dataGridView1.Rows.Clear();
+            //foreach (var contact in contacts)
+            //{
+            //    dataGridView1.Rows.Add(contact);
+            //}
         }
 
         private void btnSaveChanges_Click(object sender, EventArgs e)
@@ -296,6 +282,7 @@ namespace ContactsManager
             CurrentContact.Phone1 = txtPhone1.Text.Trim();
             CurrentContact.Phone2 = txtPhone2.Text.Trim();
             CurrentContact.Phone3 = txtPhone3.Text.Trim();
+            currentContact.Id = 
         }
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -350,11 +337,12 @@ namespace ContactsManager
         {
             if (dataGridView1.SelectedRows != null)
             {
-                var contact = Program.Contacts.Get(dataGridView1.SelectedRows[0].Cells[clmName.Name].Value.ToString(), dataGridView1.SelectedRows[0].Cells[clmInternalSerial.Name].Value.ToString());
-                if (contact != null)
-                {
-                    CurrentContact = contact;
-                }
+                CurrentContact = dataGridView1.SelectedRows[0].DataBoundItem as Contact;
+                //var contacts = Program.Contacts.Get(dataGridView1.SelectedRows[0].Cells[clmName.Name].Value.ToString(), dataGridView1.SelectedRows[0].Cells[clmInternalSerial.Name].Value.ToString());
+                //if (contact != null)
+                //{
+                //    CurrentContact = contact;
+                //}
             }
         }
 
@@ -380,7 +368,7 @@ namespace ContactsManager
                     {
                         if (contact.Address.City.ToLower().Trim().Contains(str) ||
                             contact.Address.Street.ToLower().Trim().Contains(str) ||
-                            contact.Address.Apartment.ToLower().Trim().Contains(str))
+                            contact.Address.ZipCode.ToLower().Trim().Contains(str))
                         {
                             contacts.Add(contact);
                             continue;
@@ -453,6 +441,21 @@ namespace ContactsManager
         private void settingsToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void addNewContactToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+            using (var frmAdd = new frmAddEditContact())
+            {
+                if (frmAdd.ShowDialog() == DialogResult.OK)
+                {
+                    ContactsManager.Program.Contacts.Add(frmAdd.Contact);
+                    FillFields();
+                }
+
+                CurrentContact = frmAdd.Contact;
+            }
         }
     }
 }

@@ -208,7 +208,7 @@ namespace ContactsManager
         {
             SaveContacts();
             SyncContacts();
-            LoadContacts();
+            //LoadContacts();
         }
 
         private static void SyncContacts()

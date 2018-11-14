@@ -10,13 +10,17 @@ namespace ContactsManager.Classes
     {
         public string City { get; set; } = "";
         public string Street { get; set; } = "";
-        public string Apartment { get; set; } = "";
+        public string ZipCode { get; set; } = "";
 
-        public Address(string city, string street, string apartment)
+        public Address(string city, string street, string zipCode)
         {
             City = city;
             Street = street;
-            Apartment = apartment;
+            ZipCode = zipCode;
+        }
+        public override string ToString()
+        {
+            return Street + "," + ZipCode + "," + City;
         }
     }
 }

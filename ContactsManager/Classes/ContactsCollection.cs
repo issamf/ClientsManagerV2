@@ -22,41 +22,57 @@ namespace ContactsManager.Classes
         //    }
         //}
 
-        public Contact GetByName(string name)
+        public Contact[] GetByName(string name)
         {
+            List<Contact> result = new List<Contact>();
             foreach(var contact in contacts)
             {
                 if (contact.Name.ToLower().Trim() == name.ToLower().Trim())
                 {
-                    return contact;
+                    result.Add(contact);
                 }
             }
-            return null;
+            return result.ToArray();
         }
 
-        public Contact GetBySerial(string serialNum)
+        public Contact[] GetBySerial(string serialNum)
         {
+            List<Contact> result = new List<Contact>();
             foreach (var contact in contacts)
             {
                 if (contact.InternalSerialNumber.ToLower().Trim() == serialNum.ToLower().Trim())
                 {
-                    return contact;
+                    result.Add(contact);
                 }
             }
-            return null;
+            return result.ToArray();
         }
 
-        public Contact Get(string name, string serialNum)
+        public Contact[] GetById(string id)
         {
+            List<Contact> result = new List<Contact>();
+            foreach (var contact in contacts)
+            {
+                if (contact.Id.ToLower().Trim() == id.ToLower().Trim())
+                {
+                    result.Add(contact);
+                }
+            }
+            return result.ToArray();
+        }
+
+        public Contact[] Get(string name, string serialNum)
+        {
+            List<Contact> result = new List<Contact>();
             foreach (var contact in contacts)
             {
                 if (contact.Name.ToLower().Trim() == name.ToLower().Trim() &&
                     contact.InternalSerialNumber.ToLower().Trim() == serialNum.ToLower().Trim())
                 {
-                    return contact;
+                    result.Add(contact);
                 }
             }
-            return null;
+            return result.ToArray();
         }
         //public BindingSource bindingSource = new BindingSource();
         public bool Add(Contact contact)
