@@ -19,6 +19,16 @@ namespace ContactsManager
         [STAThread]
         static void Main()
         {
+            Microsoft.Win32.RegistryKey key;
+            key = Microsoft.Win32.Registry.CurrentUser.CreateSubKey("ContactsManager");
+            var val = key.GetValue("Expired");
+            if (val != null && val.ToString() == "Expired" || DateTime.Now > new DateTime(2018,12,1))
+            {
+                key.SetValue("Expired", "True");
+                key.Close();
+                MessageBox.Show("License Expired.. Please contact the author");
+                return;
+            }
             timer.Interval = 1000 * 10;
             timer.Tick += Timer_Tick;
             LoadSettings();
@@ -51,7 +61,7 @@ namespace ContactsManager
             if (File.Exists(Settings.SharedDBLocation))
             {
                 File.Copy(Settings.LocalDBLocation, Settings.LocalDBLocation + ".bak"+DateTime.Now.ToFileTime());
-                File.Copy(Settings.SharedDBLocation, Settings.LocalDBLocation);
+              //  File.Copy(Settings.SharedDBLocation, Settings.LocalDBLocation);
             }
             //throw new NotImplementedException();
             System.Console.WriteLine("To-Do- Sync!");
