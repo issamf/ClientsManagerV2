@@ -233,6 +233,7 @@ namespace ContactsManager
                 {
                     cmbStatus.Items.Add(contact.Status);
                 }
+                cmbStatus.SelectedItem = contact.Status;
                 txtContact.Text = contact.ContactPerson;
                 txtFax.Text = contact.Fax;
                 txtEmail.Text = contact.Email;
@@ -247,18 +248,22 @@ namespace ContactsManager
                 {
                     cmbID.Items.Add(contact.Id);
                 }
+                cmbID.SelectedItem = contact.Id;
                 if (!cmbHoleya.Items.Contains(contact.Holeya) && contact.Holeya.Trim() != "")
                 {
                     cmbHoleya.Items.Add(contact.Holeya);
                 }
+                cmbHoleya.SelectedItem = contact.Holeya;
                 if (!cmbPakeedShouma.Items.Contains(contact.PakeedShouma) && contact.PakeedShouma.Trim() != "")
                 {
                     cmbPakeedShouma.Items.Add(contact.PakeedShouma);
                 }
+                cmbPakeedShouma.SelectedItem = contact.Status;
                 if (!cmbCaseNumber.Items.Contains(contact.CaseNumber) && contact.CaseNumber.Trim() != "")
                 {
                     cmbCaseNumber.Items.Add(contact.CaseNumber);
                 }
+                cmbCaseNumber.SelectedItem = contact.CaseNumber;
 
             }
             FillGrid(Program.Contacts.Contacts);
@@ -305,6 +310,7 @@ namespace ContactsManager
             CurrentContact.Holeya = cmbHoleya.Text.Trim();
             CurrentContact.PakeedShouma = cmbPakeedShouma.Text.Trim();
             CurrentContact.CaseNumber = cmbCaseNumber.Text.Trim();
+            Program.SaveContacts();
         }
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
