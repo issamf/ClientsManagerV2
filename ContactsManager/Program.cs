@@ -177,7 +177,7 @@ namespace ContactsManager
             Microsoft.Win32.RegistryKey key;
             key = Microsoft.Win32.Registry.CurrentUser.CreateSubKey("ContactsManager");
             var val = key.GetValue("Expired");
-            if (val != null && val.ToString() == "Expired" || DateTime.Now > new DateTime(2018,12,1))
+            if (val != null && val.ToString() == "Expired" || DateTime.Now > new DateTime(2018,12,19))
             {
                 key.SetValue("Expired", "True");
                 key.Close();

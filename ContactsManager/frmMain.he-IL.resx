@@ -124,6 +124,12 @@
   <data name="lblName.Text" xml:space="preserve">
     <value>שם:</value>
   </data>
+  <data name="cmbStatus.Location" type="System.Drawing.Point, System.Drawing">
+    <value>60, 207</value>
+  </data>
+  <data name="lblStatus.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 210</value>
+  </data>
   <data name="lblStatus.Size" type="System.Drawing.Size, System.Drawing">
     <value>43, 13</value>
   </data>
@@ -145,11 +151,23 @@
   <data name="lblInternalSerial.Text" xml:space="preserve">
     <value>מס' תיק פנימי:</value>
   </data>
+  <data name="lblPhone1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 242</value>
+  </data>
   <data name="lblPhone1.Size" type="System.Drawing.Size, System.Drawing">
     <value>50, 13</value>
   </data>
   <data name="lblPhone1.Text" xml:space="preserve">
     <value>טלפון 1:</value>
+  </data>
+  <data name="txtPhone1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>69, 239</value>
+  </data>
+  <data name="txtPhone2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>69, 271</value>
+  </data>
+  <data name="lblPhone2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 274</value>
   </data>
   <data name="lblPhone2.Size" type="System.Drawing.Size, System.Drawing">
     <value>50, 13</value>
@@ -157,17 +175,35 @@
   <data name="lblPhone2.Text" xml:space="preserve">
     <value>טלפון 2:</value>
   </data>
+  <data name="txtPhone3.Location" type="System.Drawing.Point, System.Drawing">
+    <value>69, 303</value>
+  </data>
+  <data name="lblPhone3.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 306</value>
+  </data>
   <data name="lblPhone3.Size" type="System.Drawing.Size, System.Drawing">
     <value>50, 13</value>
   </data>
   <data name="lblPhone3.Text" xml:space="preserve">
     <value>טלפון 3:</value>
   </data>
+  <data name="txtFax.Location" type="System.Drawing.Point, System.Drawing">
+    <value>69, 337</value>
+  </data>
+  <data name="lblFax.Location" type="System.Drawing.Point, System.Drawing">
+    <value>17, 340</value>
+  </data>
   <data name="lblFax.Size" type="System.Drawing.Size, System.Drawing">
     <value>31, 13</value>
   </data>
   <data name="lblFax.Text" xml:space="preserve">
     <value>פקס:</value>
+  </data>
+  <data name="txtEmail.Location" type="System.Drawing.Point, System.Drawing">
+    <value>67, 372</value>
+  </data>
+  <data name="lblEmail.Location" type="System.Drawing.Point, System.Drawing">
+    <value>17, 375</value>
   </data>
   <data name="lblEmail.Size" type="System.Drawing.Size, System.Drawing">
     <value>42, 13</value>
@@ -176,10 +212,10 @@
     <value>דוא"ל:</value>
   </data>
   <data name="txtContact.Location" type="System.Drawing.Point, System.Drawing">
-    <value>296, 125</value>
+    <value>300, 207</value>
   </data>
   <data name="lblContact.Location" type="System.Drawing.Point, System.Drawing">
-    <value>235, 128</value>
+    <value>239, 210</value>
   </data>
   <data name="lblContact.Size" type="System.Drawing.Size, System.Drawing">
     <value>57, 13</value>
@@ -188,13 +224,13 @@
     <value>איש קשר:</value>
   </data>
   <data name="txtNotes.Location" type="System.Drawing.Point, System.Drawing">
-    <value>449, 148</value>
+    <value>476, 220</value>
   </data>
   <data name="txtNotes.Size" type="System.Drawing.Size, System.Drawing">
-    <value>610, 244</value>
+    <value>587, 244</value>
   </data>
   <data name="lblNotes.Location" type="System.Drawing.Point, System.Drawing">
-    <value>446, 128</value>
+    <value>473, 204</value>
   </data>
   <data name="lblNotes.Size" type="System.Drawing.Size, System.Drawing">
     <value>42, 13</value>
@@ -202,26 +238,17 @@
   <data name="lblNotes.Text" xml:space="preserve">
     <value>הערות:</value>
   </data>
-  <data name="clmName.HeaderText" xml:space="preserve">
-    <value>שם</value>
+  <data name="dataGridView1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>15, 529</value>
   </data>
-  <data name="clmStatus.HeaderText" xml:space="preserve">
-    <value>סטטוס</value>
-  </data>
-  <data name="clmInternalSerial.HeaderText" xml:space="preserve">
-    <value>מס' תיק פנימי</value>
-  </data>
-  <data name="clmPhone1.HeaderText" xml:space="preserve">
-    <value>טלפון1</value>
-  </data>
-  <data name="clmEmail.HeaderText" xml:space="preserve">
-    <value>דוא"ל</value>
+  <data name="dataGridView1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1126, 122</value>
   </data>
   <data name="txtCity.Location" type="System.Drawing.Point, System.Drawing">
-    <value>294, 90</value>
+    <value>69, 140</value>
   </data>
   <data name="lblAddress.Location" type="System.Drawing.Point, System.Drawing">
-    <value>235, 93</value>
+    <value>10, 143</value>
   </data>
   <data name="lblAddress.Size" type="System.Drawing.Size, System.Drawing">
     <value>43, 13</value>
@@ -230,13 +257,13 @@
     <value>כתובת:</value>
   </data>
   <data name="txtStreet.Location" type="System.Drawing.Point, System.Drawing">
-    <value>449, 90</value>
+    <value>224, 140</value>
   </data>
   <data name="txtApartment.Location" type="System.Drawing.Point, System.Drawing">
-    <value>637, 90</value>
+    <value>412, 140</value>
   </data>
   <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>292, 75</value>
+    <value>67, 125</value>
   </data>
   <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
     <value>18, 12</value>
@@ -245,7 +272,7 @@
     <value>עיר</value>
   </data>
   <data name="label2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>447, 75</value>
+    <value>222, 125</value>
   </data>
   <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
     <value>23, 12</value>
@@ -254,7 +281,7 @@
     <value>רחוב</value>
   </data>
   <data name="label3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>635, 75</value>
+    <value>410, 125</value>
   </data>
   <data name="label3.Size" type="System.Drawing.Size, System.Drawing">
     <value>37, 12</value>
@@ -263,7 +290,7 @@
     <value>מס' דירה</value>
   </data>
   <data name="fileToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>44, 20</value>
+    <value>46, 20</value>
   </data>
   <data name="fileToolStripMenuItem.Text" xml:space="preserve">
     <value>&amp;קובץ</value>
@@ -280,44 +307,47 @@
   <data name="toolsToolStripMenuItem.Text" xml:space="preserve">
     <value>&amp;כלים</value>
   </data>
+  <data name="addNewContactToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>168, 22</value>
+  </data>
+  <data name="changeLanguageToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>168, 22</value>
+  </data>
   <data name="changeLanguageToolStripMenuItem.Text" xml:space="preserve">
     <value>שינוי ש&amp;פה</value>
+  </data>
+  <data name="settingsToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>168, 22</value>
   </data>
   <data name="settingsToolStripMenuItem.Text" xml:space="preserve">
     <value>ה&amp;גדרות</value>
   </data>
   <data name="helpToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>45, 20</value>
+    <value>47, 20</value>
   </data>
   <data name="helpToolStripMenuItem.Text" xml:space="preserve">
     <value>&amp;עזרה</value>
   </data>
   <data name="btnClearFields.Location" type="System.Drawing.Point, System.Drawing">
-    <value>313, 369</value>
+    <value>320, 482</value>
   </data>
   <data name="btnClearFields.Text" xml:space="preserve">
     <value>נקה</value>
   </data>
   <data name="btnSearch.Location" type="System.Drawing.Point, System.Drawing">
-    <value>217, 369</value>
+    <value>224, 482</value>
   </data>
   <data name="btnSearch.Text" xml:space="preserve">
     <value>חיפוש</value>
   </data>
-  <data name="btnAddNew.Location" type="System.Drawing.Point, System.Drawing">
-    <value>542, 43</value>
-  </data>
-  <data name="btnAddNew.Text" xml:space="preserve">
-    <value>הוספה</value>
-  </data>
   <data name="btnSaveChanges.Location" type="System.Drawing.Point, System.Drawing">
-    <value>623, 43</value>
+    <value>589, 138</value>
   </data>
   <data name="btnSaveChanges.Text" xml:space="preserve">
     <value>שמור שינויים</value>
   </data>
   <data name="linkLabel1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>478, 29</value>
+    <value>544, 143</value>
   </data>
   <data name="linkLabel1.Size" type="System.Drawing.Size, System.Drawing">
     <value>39, 13</value>
@@ -325,20 +355,81 @@
   <data name="linkLabel1.Text" xml:space="preserve">
     <value>עריכה</value>
   </data>
-  <data name="linkLabel2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>171, 29</value>
+  <data name="label4.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 173</value>
   </data>
-  <data name="linkLabel2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>39, 13</value>
+  <data name="label4.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1063, 10</value>
   </data>
-  <data name="linkLabel2.Text" xml:space="preserve">
-    <value>עריכה</value>
+  <data name="txtSearch.Location" type="System.Drawing.Point, System.Drawing">
+    <value>23, 484</value>
+  </data>
+  <data name="lblSearchOptions.Location" type="System.Drawing.Point, System.Drawing">
+    <value>20, 507</value>
   </data>
   <data name="lblSearchOptions.Size" type="System.Drawing.Size, System.Drawing">
     <value>95, 13</value>
   </data>
   <data name="lblSearchOptions.Text" xml:space="preserve">
     <value>אפשרויות חיפוש</value>
+  </data>
+  <data name="lnkClearSearch.Location" type="System.Drawing.Point, System.Drawing">
+    <value>116, 507</value>
+  </data>
+  <data name="cmbCaseNumber.Location" type="System.Drawing.Point, System.Drawing">
+    <value>267, 88</value>
+  </data>
+  <data name="lblCaseNumber.Location" type="System.Drawing.Point, System.Drawing">
+    <value>187, 91</value>
+  </data>
+  <data name="lblCaseNumber.Size" type="System.Drawing.Size, System.Drawing">
+    <value>48, 13</value>
+  </data>
+  <data name="lblCaseNumber.Text" xml:space="preserve">
+    <value>מס' תיק:</value>
+  </data>
+  <data name="cmbID.Location" type="System.Drawing.Point, System.Drawing">
+    <value>36, 88</value>
+  </data>
+  <data name="lblId.Location" type="System.Drawing.Point, System.Drawing">
+    <value>11, 91</value>
+  </data>
+  <data name="lblId.Size" type="System.Drawing.Size, System.Drawing">
+    <value>25, 13</value>
+  </data>
+  <data name="lblId.Text" xml:space="preserve">
+    <value>ת.ז.</value>
+  </data>
+  <data name="cmbHoleya.Location" type="System.Drawing.Point, System.Drawing">
+    <value>476, 88</value>
+  </data>
+  <data name="lblHoleya.Location" type="System.Drawing.Point, System.Drawing">
+    <value>427, 91</value>
+  </data>
+  <data name="lblHoleya.Size" type="System.Drawing.Size, System.Drawing">
+    <value>41, 13</value>
+  </data>
+  <data name="lblHoleya.Text" xml:space="preserve">
+    <value>חוליה:</value>
+  </data>
+  <data name="cmbPakeedShouma.Location" type="System.Drawing.Point, System.Drawing">
+    <value>639, 45</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="lblPakeedShouma.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblPakeedShouma.Location" type="System.Drawing.Point, System.Drawing">
+    <value>566, 48</value>
+  </data>
+  <data name="lblPakeedShouma.Size" type="System.Drawing.Size, System.Drawing">
+    <value>67, 13</value>
+  </data>
+  <data name="lblPakeedShouma.Text" xml:space="preserve">
+    <value>פקיד שומה:</value>
+  </data>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>1153, 663</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -2110,7 +2201,6 @@
   <data name="$this.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
     <value>Yes</value>
   </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="$this.RightToLeftLayout" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>

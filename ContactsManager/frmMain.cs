@@ -241,6 +241,25 @@ namespace ContactsManager
                 txtPhone1.Text = contact.Phone1;
                 txtPhone2.Text = contact.Phone2;
                 txtPhone3.Text = contact.Phone3;
+
+
+                if (!cmbID.Items.Contains(contact.Id) && contact.Id.Trim() != "")
+                {
+                    cmbID.Items.Add(contact.Id);
+                }
+                if (!cmbHoleya.Items.Contains(contact.Holeya) && contact.Holeya.Trim() != "")
+                {
+                    cmbHoleya.Items.Add(contact.Holeya);
+                }
+                if (!cmbPakeedShouma.Items.Contains(contact.PakeedShouma) && contact.PakeedShouma.Trim() != "")
+                {
+                    cmbPakeedShouma.Items.Add(contact.PakeedShouma);
+                }
+                if (!cmbCaseNumber.Items.Contains(contact.CaseNumber) && contact.CaseNumber.Trim() != "")
+                {
+                    cmbCaseNumber.Items.Add(contact.CaseNumber);
+                }
+
             }
             FillGrid(Program.Contacts.Contacts);
         }
@@ -282,7 +301,10 @@ namespace ContactsManager
             CurrentContact.Phone1 = txtPhone1.Text.Trim();
             CurrentContact.Phone2 = txtPhone2.Text.Trim();
             CurrentContact.Phone3 = txtPhone3.Text.Trim();
-            currentContact.Id = 
+            CurrentContact.Id = cmbID.Text.Trim();
+            CurrentContact.Holeya = cmbHoleya.Text.Trim();
+            CurrentContact.PakeedShouma = cmbPakeedShouma.Text.Trim();
+            CurrentContact.CaseNumber = cmbCaseNumber.Text.Trim();
         }
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)

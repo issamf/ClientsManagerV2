@@ -62,6 +62,7 @@
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.addNewContactToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.changeLanguageToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.settingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -73,11 +74,18 @@
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.lblSearchOptions = new System.Windows.Forms.LinkLabel();
             this.lnkClearSearch = new System.Windows.Forms.LinkLabel();
+            this.cmbCaseNumber = new System.Windows.Forms.ComboBox();
+            this.lblCaseNumber = new System.Windows.Forms.Label();
+            this.cmbID = new System.Windows.Forms.ComboBox();
+            this.lblId = new System.Windows.Forms.Label();
+            this.cmbHoleya = new System.Windows.Forms.ComboBox();
+            this.lblHoleya = new System.Windows.Forms.Label();
+            this.cmbPakeedShouma = new System.Windows.Forms.ComboBox();
+            this.lblPakeedShouma = new System.Windows.Forms.Label();
             this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.statusDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.caseNumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.internalSerialNumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.caseNekoyeemDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.contactPersonDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.notesDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.emailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -88,15 +96,6 @@
             this.faxDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.contactBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.lblCaseNumber = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.lblId = new System.Windows.Forms.Label();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.lblHoleya = new System.Windows.Forms.Label();
-            this.comboBox4 = new System.Windows.Forms.ComboBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.addNewContactToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.contactBindingSource)).BeginInit();
@@ -109,19 +108,19 @@
             // 
             // cmbName
             // 
+            resources.ApplyResources(this.cmbName, "cmbName");
             this.cmbName.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.cmbName.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cmbName.FormattingEnabled = true;
-            resources.ApplyResources(this.cmbName, "cmbName");
             this.cmbName.Name = "cmbName";
             this.cmbName.SelectedIndexChanged += new System.EventHandler(this.cmbName_SelectedIndexChanged);
             this.cmbName.KeyUp += new System.Windows.Forms.KeyEventHandler(this.cmbName_KeyUp);
             // 
             // cmbStatus
             // 
+            resources.ApplyResources(this.cmbStatus, "cmbStatus");
             this.cmbStatus.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.cmbStatus.FormattingEnabled = true;
-            resources.ApplyResources(this.cmbStatus, "cmbStatus");
             this.cmbStatus.Name = "cmbStatus";
             // 
             // lblStatus
@@ -131,10 +130,10 @@
             // 
             // cmbInternalSerial
             // 
+            resources.ApplyResources(this.cmbInternalSerial, "cmbInternalSerial");
             this.cmbInternalSerial.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.cmbInternalSerial.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cmbInternalSerial.FormattingEnabled = true;
-            resources.ApplyResources(this.cmbInternalSerial, "cmbInternalSerial");
             this.cmbInternalSerial.Name = "cmbInternalSerial";
             this.cmbInternalSerial.SelectedIndexChanged += new System.EventHandler(this.cmbInternalSerial_SelectedIndexChanged);
             // 
@@ -224,7 +223,6 @@
             this.statusDataGridViewTextBoxColumn,
             this.caseNumberDataGridViewTextBoxColumn,
             this.internalSerialNumberDataGridViewTextBoxColumn,
-            this.caseNekoyeemDataGridViewTextBoxColumn,
             this.contactPersonDataGridViewTextBoxColumn,
             this.notesDataGridViewTextBoxColumn,
             this.emailDataGridViewTextBoxColumn,
@@ -279,51 +277,57 @@
             // 
             // menuStrip1
             // 
+            resources.ApplyResources(this.menuStrip1, "menuStrip1");
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fileToolStripMenuItem,
             this.toolsToolStripMenuItem,
             this.helpToolStripMenuItem});
-            resources.ApplyResources(this.menuStrip1, "menuStrip1");
             this.menuStrip1.Name = "menuStrip1";
             // 
             // fileToolStripMenuItem
             // 
+            resources.ApplyResources(this.fileToolStripMenuItem, "fileToolStripMenuItem");
             this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.exitToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            resources.ApplyResources(this.fileToolStripMenuItem, "fileToolStripMenuItem");
             // 
             // exitToolStripMenuItem
             // 
-            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
             resources.ApplyResources(this.exitToolStripMenuItem, "exitToolStripMenuItem");
+            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
             // toolsToolStripMenuItem
             // 
+            resources.ApplyResources(this.toolsToolStripMenuItem, "toolsToolStripMenuItem");
             this.toolsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.addNewContactToolStripMenuItem,
             this.changeLanguageToolStripMenuItem,
             this.settingsToolStripMenuItem});
             this.toolsToolStripMenuItem.Name = "toolsToolStripMenuItem";
-            resources.ApplyResources(this.toolsToolStripMenuItem, "toolsToolStripMenuItem");
+            // 
+            // addNewContactToolStripMenuItem
+            // 
+            resources.ApplyResources(this.addNewContactToolStripMenuItem, "addNewContactToolStripMenuItem");
+            this.addNewContactToolStripMenuItem.Name = "addNewContactToolStripMenuItem";
+            this.addNewContactToolStripMenuItem.Click += new System.EventHandler(this.addNewContactToolStripMenuItem_Click);
             // 
             // changeLanguageToolStripMenuItem
             // 
-            this.changeLanguageToolStripMenuItem.Name = "changeLanguageToolStripMenuItem";
             resources.ApplyResources(this.changeLanguageToolStripMenuItem, "changeLanguageToolStripMenuItem");
+            this.changeLanguageToolStripMenuItem.Name = "changeLanguageToolStripMenuItem";
             this.changeLanguageToolStripMenuItem.Click += new System.EventHandler(this.changeLanguageToolStripMenuItem_Click);
             // 
             // settingsToolStripMenuItem
             // 
-            this.settingsToolStripMenuItem.Name = "settingsToolStripMenuItem";
             resources.ApplyResources(this.settingsToolStripMenuItem, "settingsToolStripMenuItem");
+            this.settingsToolStripMenuItem.Name = "settingsToolStripMenuItem";
             this.settingsToolStripMenuItem.Click += new System.EventHandler(this.settingsToolStripMenuItem_Click);
             // 
             // helpToolStripMenuItem
             // 
-            this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
             resources.ApplyResources(this.helpToolStripMenuItem, "helpToolStripMenuItem");
+            this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
             // 
             // btnClearFields
             // 
@@ -381,6 +385,58 @@
             this.lnkClearSearch.Name = "lnkClearSearch";
             this.lnkClearSearch.TabStop = true;
             // 
+            // cmbCaseNumber
+            // 
+            resources.ApplyResources(this.cmbCaseNumber, "cmbCaseNumber");
+            this.cmbCaseNumber.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cmbCaseNumber.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cmbCaseNumber.FormattingEnabled = true;
+            this.cmbCaseNumber.Name = "cmbCaseNumber";
+            // 
+            // lblCaseNumber
+            // 
+            resources.ApplyResources(this.lblCaseNumber, "lblCaseNumber");
+            this.lblCaseNumber.Name = "lblCaseNumber";
+            // 
+            // cmbID
+            // 
+            resources.ApplyResources(this.cmbID, "cmbID");
+            this.cmbID.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cmbID.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cmbID.FormattingEnabled = true;
+            this.cmbID.Name = "cmbID";
+            // 
+            // lblId
+            // 
+            resources.ApplyResources(this.lblId, "lblId");
+            this.lblId.Name = "lblId";
+            // 
+            // cmbHoleya
+            // 
+            resources.ApplyResources(this.cmbHoleya, "cmbHoleya");
+            this.cmbHoleya.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cmbHoleya.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cmbHoleya.FormattingEnabled = true;
+            this.cmbHoleya.Name = "cmbHoleya";
+            // 
+            // lblHoleya
+            // 
+            resources.ApplyResources(this.lblHoleya, "lblHoleya");
+            this.lblHoleya.Name = "lblHoleya";
+            // 
+            // cmbPakeedShouma
+            // 
+            resources.ApplyResources(this.cmbPakeedShouma, "cmbPakeedShouma");
+            this.cmbPakeedShouma.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cmbPakeedShouma.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cmbPakeedShouma.FormattingEnabled = true;
+            this.cmbPakeedShouma.Name = "cmbPakeedShouma";
+            // 
+            // lblPakeedShouma
+            // 
+            resources.ApplyResources(this.lblPakeedShouma, "lblPakeedShouma");
+            this.lblPakeedShouma.Name = "lblPakeedShouma";
+            // 
             // nameDataGridViewTextBoxColumn
             // 
             this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
@@ -408,13 +464,6 @@
             resources.ApplyResources(this.internalSerialNumberDataGridViewTextBoxColumn, "internalSerialNumberDataGridViewTextBoxColumn");
             this.internalSerialNumberDataGridViewTextBoxColumn.Name = "internalSerialNumberDataGridViewTextBoxColumn";
             this.internalSerialNumberDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // caseNekoyeemDataGridViewTextBoxColumn
-            // 
-            this.caseNekoyeemDataGridViewTextBoxColumn.DataPropertyName = "CaseNekoyeem";
-            resources.ApplyResources(this.caseNekoyeemDataGridViewTextBoxColumn, "caseNekoyeemDataGridViewTextBoxColumn");
-            this.caseNekoyeemDataGridViewTextBoxColumn.Name = "caseNekoyeemDataGridViewTextBoxColumn";
-            this.caseNekoyeemDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // contactPersonDataGridViewTextBoxColumn
             // 
@@ -483,75 +532,17 @@
             // 
             this.contactBindingSource.DataSource = typeof(ContactsManager.Classes.Contact);
             // 
-            // comboBox1
-            // 
-            this.comboBox1.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.comboBox1.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.comboBox1.FormattingEnabled = true;
-            resources.ApplyResources(this.comboBox1, "comboBox1");
-            this.comboBox1.Name = "comboBox1";
-            // 
-            // lblCaseNumber
-            // 
-            resources.ApplyResources(this.lblCaseNumber, "lblCaseNumber");
-            this.lblCaseNumber.Name = "lblCaseNumber";
-            // 
-            // comboBox2
-            // 
-            this.comboBox2.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.comboBox2.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.comboBox2.FormattingEnabled = true;
-            resources.ApplyResources(this.comboBox2, "comboBox2");
-            this.comboBox2.Name = "comboBox2";
-            // 
-            // lblId
-            // 
-            resources.ApplyResources(this.lblId, "lblId");
-            this.lblId.Name = "lblId";
-            // 
-            // comboBox3
-            // 
-            this.comboBox3.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.comboBox3.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.comboBox3.FormattingEnabled = true;
-            resources.ApplyResources(this.comboBox3, "comboBox3");
-            this.comboBox3.Name = "comboBox3";
-            // 
-            // lblHoleya
-            // 
-            resources.ApplyResources(this.lblHoleya, "lblHoleya");
-            this.lblHoleya.Name = "lblHoleya";
-            // 
-            // comboBox4
-            // 
-            this.comboBox4.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.comboBox4.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.comboBox4.FormattingEnabled = true;
-            resources.ApplyResources(this.comboBox4, "comboBox4");
-            this.comboBox4.Name = "comboBox4";
-            // 
-            // label6
-            // 
-            resources.ApplyResources(this.label6, "label6");
-            this.label6.Name = "label6";
-            // 
-            // addNewContactToolStripMenuItem
-            // 
-            this.addNewContactToolStripMenuItem.Name = "addNewContactToolStripMenuItem";
-            resources.ApplyResources(this.addNewContactToolStripMenuItem, "addNewContactToolStripMenuItem");
-            this.addNewContactToolStripMenuItem.Click += new System.EventHandler(this.addNewContactToolStripMenuItem_Click);
-            // 
             // frmMain
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.comboBox3);
+            this.Controls.Add(this.cmbHoleya);
             this.Controls.Add(this.lblHoleya);
-            this.Controls.Add(this.comboBox4);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.comboBox2);
+            this.Controls.Add(this.cmbPakeedShouma);
+            this.Controls.Add(this.lblPakeedShouma);
+            this.Controls.Add(this.cmbID);
             this.Controls.Add(this.lblId);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.cmbCaseNumber);
             this.Controls.Add(this.lblCaseNumber);
             this.Controls.Add(this.lnkClearSearch);
             this.Controls.Add(this.lblSearchOptions);
@@ -663,14 +654,14 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn addressDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn faxDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cmbCaseNumber;
         private System.Windows.Forms.Label lblCaseNumber;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox cmbID;
         private System.Windows.Forms.Label lblId;
-        private System.Windows.Forms.ComboBox comboBox3;
+        private System.Windows.Forms.ComboBox cmbHoleya;
         private System.Windows.Forms.Label lblHoleya;
-        private System.Windows.Forms.ComboBox comboBox4;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.ComboBox cmbPakeedShouma;
+        private System.Windows.Forms.Label lblPakeedShouma;
         private System.Windows.Forms.ToolStripMenuItem addNewContactToolStripMenuItem;
     }
 }
