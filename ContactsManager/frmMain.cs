@@ -53,6 +53,13 @@ namespace ContactsManager
                 txtPhone3.Text = newContact.Phone3;
 
 
+                cmbStatus.SelectedItem = newContact.Status;
+                cmbID.SelectedItem = newContact.Id;
+                cmbHoleya.SelectedItem = newContact.Holeya;
+                cmbPakeedShouma.SelectedItem = newContact.PakeedShouma;
+                cmbCaseNumber.SelectedItem = newContact.CaseNumber;
+
+
 
                 cmbName.SelectedIndexChanged += cmbName_SelectedIndexChanged;
                 cmbInternalSerial.SelectedIndexChanged += cmbInternalSerial_SelectedIndexChanged;
@@ -233,7 +240,9 @@ namespace ContactsManager
                 {
                     cmbStatus.Items.Add(contact.Status);
                 }
-                cmbStatus.SelectedItem = contact.Status;
+                cmbStatus.SelectedIndex = -1;
+                //cmbStatus.SelectedItem = contact.Status;
+
                 txtContact.Text = contact.ContactPerson;
                 txtFax.Text = contact.Fax;
                 txtEmail.Text = contact.Email;
@@ -248,22 +257,29 @@ namespace ContactsManager
                 {
                     cmbID.Items.Add(contact.Id);
                 }
-                cmbID.SelectedItem = contact.Id;
+                //cmbID.SelectedItem = contact.Id;
+                cmbID.SelectedIndex = -1;
+
                 if (!cmbHoleya.Items.Contains(contact.Holeya) && contact.Holeya.Trim() != "")
                 {
                     cmbHoleya.Items.Add(contact.Holeya);
                 }
-                cmbHoleya.SelectedItem = contact.Holeya;
+                //cmbHoleya.SelectedItem = contact.Holeya;
+                cmbHoleya.SelectedIndex = -1;
+
                 if (!cmbPakeedShouma.Items.Contains(contact.PakeedShouma) && contact.PakeedShouma.Trim() != "")
                 {
                     cmbPakeedShouma.Items.Add(contact.PakeedShouma);
                 }
-                cmbPakeedShouma.SelectedItem = contact.Status;
+                //cmbPakeedShouma.SelectedItem = contact.Status;
+                cmbPakeedShouma.SelectedIndex = -1;
+
                 if (!cmbCaseNumber.Items.Contains(contact.CaseNumber) && contact.CaseNumber.Trim() != "")
                 {
                     cmbCaseNumber.Items.Add(contact.CaseNumber);
                 }
-                cmbCaseNumber.SelectedItem = contact.CaseNumber;
+                //cmbCaseNumber.SelectedItem = contact.CaseNumber;
+                cmbCaseNumber.SelectedIndex = -1;
 
             }
             FillGrid(Program.Contacts.Contacts);
