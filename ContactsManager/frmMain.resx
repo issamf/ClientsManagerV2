@@ -214,7 +214,7 @@
     <value>Clear Search</value>
   </data>
   <data name="cmbID.TabIndex" type="System.Int32, mscorlib">
-    <value>41</value>
+    <value>3</value>
   </data>
   <data name="cmbHoleya.Size" type="System.Drawing.Size, System.Drawing">
     <value>121, 21</value>
@@ -276,9 +276,6 @@
   <data name="btnClearFields.TabIndex" type="System.Int32, mscorlib">
     <value>17</value>
   </data>
-  <data name="&gt;&gt;lblFax.Name" xml:space="preserve">
-    <value>lblFax</value>
-  </data>
   <data name="&gt;&gt;txtCity.Type" xml:space="preserve">
     <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
@@ -303,11 +300,14 @@
   <data name="lblNotes.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <data name="&gt;&gt;importContactsToolStripMenuItem.Name" xml:space="preserve">
+    <value>importContactsToolStripMenuItem</value>
+  </data>
   <data name="&gt;&gt;menuStrip1.ZOrder" xml:space="preserve">
     <value>44</value>
   </data>
-  <data name="&gt;&gt;btnClearFields.ZOrder" xml:space="preserve">
-    <value>15</value>
+  <data name="lblHoleya.Text" xml:space="preserve">
+    <value>Holeya:</value>
   </data>
   <data name="&gt;&gt;lblSearchOptions.Parent" xml:space="preserve">
     <value>$this</value>
@@ -318,14 +318,20 @@
   <data name="lblEmail.Location" type="System.Drawing.Point, System.Drawing">
     <value>13, 367</value>
   </data>
-  <data name="label3.TabIndex" type="System.Int32, mscorlib">
-    <value>27</value>
+  <data name="&gt;&gt;btnClearFields.Parent" xml:space="preserve">
+    <value>$this</value>
   </data>
-  <data name="lblHoleya.TabIndex" type="System.Int32, mscorlib">
-    <value>46</value>
+  <data name="&gt;&gt;btnClearFields.ZOrder" xml:space="preserve">
+    <value>15</value>
+  </data>
+  <data name="&gt;&gt;txtPhone3.Name" xml:space="preserve">
+    <value>txtPhone3</value>
   </data>
   <data name="&gt;&gt;exitToolStripMenuItem.Name" xml:space="preserve">
     <value>exitToolStripMenuItem</value>
+  </data>
+  <data name="lblHoleya.Location" type="System.Drawing.Point, System.Drawing">
+    <value>460, 86</value>
   </data>
   <data name="&gt;&gt;label4.Parent" xml:space="preserve">
     <value>$this</value>
@@ -342,14 +348,11 @@
   <data name="btnSearch.Text" xml:space="preserve">
     <value>Search</value>
   </data>
-  <data name="txtApartment.TabIndex" type="System.Int32, mscorlib">
-    <value>10</value>
-  </data>
   <data name="lblStatus.Location" type="System.Drawing.Point, System.Drawing">
     <value>12, 198</value>
   </data>
-  <data name="&gt;&gt;lblPhone3.ZOrder" xml:space="preserve">
-    <value>33</value>
+  <data name="&gt;&gt;lblCaseNumber.ZOrder" xml:space="preserve">
+    <value>7</value>
   </data>
   <data name="lblPhone2.TabIndex" type="System.Int32, mscorlib">
     <value>8</value>
@@ -370,7 +373,7 @@
     <value>notesDataGridViewTextBoxColumn</value>
   </data>
   <data name="txtNotes.TabIndex" type="System.Int32, mscorlib">
-    <value>12</value>
+    <value>16</value>
   </data>
   <data name="&gt;&gt;cmbID.Type" xml:space="preserve">
     <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -378,14 +381,14 @@
   <data name="&gt;&gt;cmbInternalSerial.Type" xml:space="preserve">
     <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="importContactsToolStripMenuItem.Text" xml:space="preserve">
+    <value>Import Contacts</value>
+  </data>
   <data name="&gt;&gt;phone2DataGridViewTextBoxColumn.Type" xml:space="preserve">
     <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;lblEmail.Parent" xml:space="preserve">
     <value>$this</value>
-  </data>
-  <data name="txtCity.Size" type="System.Drawing.Size, System.Drawing">
-    <value>143, 20</value>
   </data>
   <data name="&gt;&gt;txtEmail.Type" xml:space="preserve">
     <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -400,25 +403,19 @@
     <value>Fax</value>
   </data>
   <data name="exitToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>92, 22</value>
-  </data>
-  <data name="notesDataGridViewTextBoxColumn.HeaderText" xml:space="preserve">
-    <value>Notes</value>
-  </data>
-  <data name="&gt;&gt;changeLanguageToolStripMenuItem.Name" xml:space="preserve">
-    <value>changeLanguageToolStripMenuItem</value>
+    <value>180, 22</value>
   </data>
   <data name="label1.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
+  </data>
+  <data name="lblContact.Text" xml:space="preserve">
+    <value>Contact:</value>
   </data>
   <data name="lblHoleya.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="lblFax.Location" type="System.Drawing.Point, System.Drawing">
     <value>13, 328</value>
-  </data>
-  <data name="&gt;&gt;lblStatus.Name" xml:space="preserve">
-    <value>lblStatus</value>
   </data>
   <data name="btnSaveChanges.Location" type="System.Drawing.Point, System.Drawing">
     <value>569, 134</value>
@@ -483,9 +480,6 @@
   <data name="lblFax.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
   <data name="&gt;&gt;idDataGridViewTextBoxColumn.Name" xml:space="preserve">
     <value>idDataGridViewTextBoxColumn</value>
   </data>
@@ -532,7 +526,7 @@
     <value>35</value>
   </data>
   <data name="txtFax.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
+    <value>13</value>
   </data>
   <data name="menuStrip1.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
@@ -558,8 +552,11 @@
   <data name="label4.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 4.25pt</value>
   </data>
-  <data name="&gt;&gt;txtEmail.Parent" xml:space="preserve">
-    <value>$this</value>
+  <data name="btnSearch.TabIndex" type="System.Int32, mscorlib">
+    <value>14</value>
+  </data>
+  <data name="notesDataGridViewTextBoxColumn.HeaderText" xml:space="preserve">
+    <value>Notes</value>
   </data>
   <data name="cmbHoleya.Location" type="System.Drawing.Point, System.Drawing">
     <value>509, 83</value>
@@ -574,10 +571,10 @@
     <value>$this</value>
   </data>
   <data name="cmbStatus.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
+    <value>9</value>
   </data>
-  <data name="cmbPakeedShouma.TabIndex" type="System.Int32, mscorlib">
-    <value>43</value>
+  <data name="&gt;&gt;cmbInternalSerial.Parent" xml:space="preserve">
+    <value>$this</value>
   </data>
   <data name="dataGridView1.TabIndex" type="System.Int32, mscorlib">
     <value>16</value>
@@ -591,20 +588,20 @@
   <data name="&gt;&gt;txtApartment.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
+  <data name="lblAddress.Size" type="System.Drawing.Size, System.Drawing">
+    <value>48, 13</value>
+  </data>
   <data name="&gt;&gt;lblAddress.ZOrder" xml:space="preserve">
     <value>22</value>
   </data>
-  <data name="&gt;&gt;linkLabel1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.LinkLabel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;lblStatus.Name" xml:space="preserve">
+    <value>lblStatus</value>
   </data>
   <data name="&gt;&gt;txtSearch.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
   <data name="btnSaveChanges.TabIndex" type="System.Int32, mscorlib">
     <value>13</value>
-  </data>
-  <data name="lblPhone1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 230</value>
   </data>
   <data name="label2.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -621,11 +618,14 @@
   <data name="lblHoleya.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="lblHoleya.Text" xml:space="preserve">
-    <value>Holeya:</value>
+  <data name="&gt;&gt;label1.Parent" xml:space="preserve">
+    <value>$this</value>
   </data>
   <data name="toolsToolStripMenuItem.Text" xml:space="preserve">
     <value>&amp;Tools</value>
+  </data>
+  <data name="&gt;&gt;lblPhone3.ZOrder" xml:space="preserve">
+    <value>33</value>
   </data>
   <data name="&gt;&gt;lblEmail.ZOrder" xml:space="preserve">
     <value>29</value>
@@ -664,10 +664,7 @@
     <value>NoControl</value>
   </data>
   <data name="txtSearch.TabIndex" type="System.Int32, mscorlib">
-    <value>36</value>
-  </data>
-  <data name="idDataGridViewTextBoxColumn.HeaderText" xml:space="preserve">
-    <value>Id</value>
+    <value>17</value>
   </data>
   <data name="&gt;&gt;txtPhone1.Type" xml:space="preserve">
     <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -2459,8 +2456,8 @@
   <data name="txtSearch.Size" type="System.Drawing.Size, System.Drawing">
     <value>189, 20</value>
   </data>
-  <data name="&gt;&gt;label3.Parent" xml:space="preserve">
-    <value>$this</value>
+  <data name="&gt;&gt;label1.Name" xml:space="preserve">
+    <value>label1</value>
   </data>
   <data name="&gt;&gt;lblInternalSerial.Parent" xml:space="preserve">
     <value>$this</value>
@@ -2477,6 +2474,9 @@
   <data name="txtApartment.Size" type="System.Drawing.Size, System.Drawing">
     <value>112, 20</value>
   </data>
+  <data name="cmbPakeedShouma.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
   <data name="lblEmail.Text" xml:space="preserve">
     <value>E-Mail:</value>
   </data>
@@ -2490,7 +2490,7 @@
     <value>25, 13</value>
   </data>
   <data name="txtPhone3.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
+    <value>12</value>
   </data>
   <data name="label1.Text" xml:space="preserve">
     <value>City</value>
@@ -2507,11 +2507,8 @@
   <data name="&gt;&gt;contactPersonDataGridViewTextBoxColumn.Type" xml:space="preserve">
     <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="btnSearch.TabIndex" type="System.Int32, mscorlib">
-    <value>14</value>
-  </data>
-  <data name="&gt;&gt;faxDataGridViewTextBoxColumn.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;linkLabel1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.LinkLabel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="changeLanguageToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>170, 22</value>
@@ -2528,14 +2525,14 @@
   <data name="cmbStatus.Size" type="System.Drawing.Size, System.Drawing">
     <value>151, 21</value>
   </data>
-  <data name="cmbID.Size" type="System.Drawing.Size, System.Drawing">
-    <value>107, 21</value>
-  </data>
   <data name="&gt;&gt;btnSaveChanges.ZOrder" xml:space="preserve">
     <value>13</value>
   </data>
   <data name="&gt;&gt;cmbName.Name" xml:space="preserve">
     <value>cmbName</value>
+  </data>
+  <data name="txtCity.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
   </data>
   <data name="&gt;&gt;lblFax.Parent" xml:space="preserve">
     <value>$this</value>
@@ -2561,14 +2558,14 @@
   <data name="txtStreet.Size" type="System.Drawing.Size, System.Drawing">
     <value>177, 20</value>
   </data>
-  <data name="lblContact.Text" xml:space="preserve">
-    <value>Contact:</value>
+  <data name="&gt;&gt;lblFax.Name" xml:space="preserve">
+    <value>lblFax</value>
   </data>
   <data name="label3.Size" type="System.Drawing.Size, System.Drawing">
     <value>54, 12</value>
   </data>
-  <data name="&gt;&gt;phone3DataGridViewTextBoxColumn.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;txtNotes.ZOrder" xml:space="preserve">
+    <value>24</value>
   </data>
   <data name="txtFax.Location" type="System.Drawing.Point, System.Drawing">
     <value>65, 325</value>
@@ -2591,11 +2588,11 @@
   <data name="&gt;&gt;lblInternalSerial.ZOrder" xml:space="preserve">
     <value>39</value>
   </data>
-  <data name="lblEmail.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
+  <data name="&gt;&gt;lblEmail.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="txtEmail.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
+    <value>14</value>
   </data>
   <data name="&gt;&gt;helpToolStripMenuItem.Name" xml:space="preserve">
     <value>helpToolStripMenuItem</value>
@@ -2603,11 +2600,11 @@
   <data name="&gt;&gt;btnSearch.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;lblCaseNumber.ZOrder" xml:space="preserve">
-    <value>7</value>
+  <data name="txtApartment.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
   </data>
-  <data name="lblHoleya.Location" type="System.Drawing.Point, System.Drawing">
-    <value>460, 86</value>
+  <data name="importContactsToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>180, 22</value>
   </data>
   <data name="&gt;&gt;lblPhone3.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -2623,6 +2620,9 @@
   </data>
   <data name="txtCity.Location" type="System.Drawing.Point, System.Drawing">
     <value>65, 136</value>
+  </data>
+  <data name="&gt;&gt;lblPhone1.Name" xml:space="preserve">
+    <value>lblPhone1</value>
   </data>
   <data name="lblName.Location" type="System.Drawing.Point, System.Drawing">
     <value>10, 48</value>
@@ -2675,8 +2675,8 @@
   <data name="btnSaveChanges.Text" xml:space="preserve">
     <value>Save Changes</value>
   </data>
-  <data name="lblAddress.Size" type="System.Drawing.Size, System.Drawing">
-    <value>48, 13</value>
+  <data name="label3.TabIndex" type="System.Int32, mscorlib">
+    <value>27</value>
   </data>
   <data name="txtEmail.Size" type="System.Drawing.Size, System.Drawing">
     <value>144, 20</value>
@@ -2708,14 +2708,11 @@
   <data name="&gt;&gt;txtNotes.Type" xml:space="preserve">
     <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="settingsToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>170, 22</value>
+  <data name="&gt;&gt;lblStatus.ZOrder" xml:space="preserve">
+    <value>41</value>
   </data>
   <data name="&gt;&gt;cmbPakeedShouma.Name" xml:space="preserve">
     <value>cmbPakeedShouma</value>
-  </data>
-  <data name="&gt;&gt;label1.Name" xml:space="preserve">
-    <value>label1</value>
   </data>
   <data name="&gt;&gt;lblName.Parent" xml:space="preserve">
     <value>$this</value>
@@ -2726,11 +2723,11 @@
   <data name="&gt;&gt;label2.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="&gt;&gt;internalSerialNumberDataGridViewTextBoxColumn.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="&gt;&gt;lblNotes.ZOrder" xml:space="preserve">
     <value>25</value>
-  </data>
-  <data name="&gt;&gt;lblEmail.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="lblPhone1.Size" type="System.Drawing.Size, System.Drawing">
     <value>47, 13</value>
@@ -2754,7 +2751,10 @@
     <value>506, 48</value>
   </data>
   <data name="txtPhone1.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
+    <value>10</value>
+  </data>
+  <data name="&gt;&gt;lblId.Name" xml:space="preserve">
+    <value>lblId</value>
   </data>
   <data name="&gt;&gt;txtNotes.Parent" xml:space="preserve">
     <value>$this</value>
@@ -2762,17 +2762,17 @@
   <data name="&gt;&gt;statusDataGridViewTextBoxColumn.Type" xml:space="preserve">
     <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="btnClearFields.Location" type="System.Drawing.Point, System.Drawing">
-    <value>339, 469</value>
+  <data name="lblEmail.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;txtEmail.Parent" xml:space="preserve">
+    <value>$this</value>
   </data>
   <data name="&gt;&gt;cmbName.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
   <data name="&gt;&gt;fileToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;cmbInternalSerial.Parent" xml:space="preserve">
-    <value>$this</value>
   </data>
   <data name="emailDataGridViewTextBoxColumn.Visible" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -2784,13 +2784,13 @@
     <value>1153, 24</value>
   </data>
   <data name="cmbCaseNumber.TabIndex" type="System.Int32, mscorlib">
-    <value>39</value>
+    <value>4</value>
   </data>
   <data name="linkLabel1.TabIndex" type="System.Int32, mscorlib">
     <value>33</value>
   </data>
-  <data name="&gt;&gt;lblPhone1.Name" xml:space="preserve">
-    <value>lblPhone1</value>
+  <data name="lblHoleya.TabIndex" type="System.Int32, mscorlib">
+    <value>46</value>
   </data>
   <data name="lblPhone1.Text" xml:space="preserve">
     <value>Phone1:</value>
@@ -2804,8 +2804,14 @@
   <data name="&gt;&gt;lblName.Name" xml:space="preserve">
     <value>lblName</value>
   </data>
+  <data name="btnClearFields.Location" type="System.Drawing.Point, System.Drawing">
+    <value>339, 469</value>
+  </data>
   <data name="statusDataGridViewTextBoxColumn.HeaderText" xml:space="preserve">
     <value>Status</value>
+  </data>
+  <data name="&gt;&gt;label3.Parent" xml:space="preserve">
+    <value>$this</value>
   </data>
   <data name="cmbInternalSerial.Location" type="System.Drawing.Point, System.Drawing">
     <value>347, 45</value>
@@ -2813,8 +2819,8 @@
   <data name="btnSearch.Location" type="System.Drawing.Point, System.Drawing">
     <value>214, 470</value>
   </data>
-  <data name="lnkClearSearch.Size" type="System.Drawing.Size, System.Drawing">
-    <value>68, 13</value>
+  <data name="txtCity.Size" type="System.Drawing.Size, System.Drawing">
+    <value>143, 20</value>
   </data>
   <data name="&gt;&gt;lblInternalSerial.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -2825,8 +2831,8 @@
   <data name="&gt;&gt;nameDataGridViewTextBoxColumn.Name" xml:space="preserve">
     <value>nameDataGridViewTextBoxColumn</value>
   </data>
-  <data name="&gt;&gt;btnClearFields.Parent" xml:space="preserve">
-    <value>$this</value>
+  <data name="&gt;&gt;phone1DataGridViewTextBoxColumn.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="cmbID.Location" type="System.Drawing.Point, System.Drawing">
     <value>37, 83</value>
@@ -2839,6 +2845,9 @@
   </data>
   <data name="&gt;&gt;cmbHoleya.ZOrder" xml:space="preserve">
     <value>0</value>
+  </data>
+  <data name="&gt;&gt;lnkClearSearch.ZOrder" xml:space="preserve">
+    <value>8</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>frmMain</value>
@@ -2862,10 +2871,10 @@
     <value>True</value>
   </data>
   <data name="txtPhone2.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
+    <value>11</value>
   </data>
-  <data name="&gt;&gt;txtPhone3.Name" xml:space="preserve">
-    <value>txtPhone3</value>
+  <data name="&gt;&gt;changeLanguageToolStripMenuItem.Name" xml:space="preserve">
+    <value>changeLanguageToolStripMenuItem</value>
   </data>
   <data name="lblPhone3.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -2903,8 +2912,8 @@
   <data name="&gt;&gt;txtPhone2.ZOrder" xml:space="preserve">
     <value>34</value>
   </data>
-  <data name="&gt;&gt;lnkClearSearch.ZOrder" xml:space="preserve">
-    <value>8</value>
+  <data name="&gt;&gt;importContactsToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;txtStreet.Parent" xml:space="preserve">
     <value>$this</value>
@@ -2913,7 +2922,7 @@
     <value>caseNumberDataGridViewTextBoxColumn</value>
   </data>
   <data name="txtStreet.TabIndex" type="System.Int32, mscorlib">
-    <value>9</value>
+    <value>7</value>
   </data>
   <data name="txtPhone3.Size" type="System.Drawing.Size, System.Drawing">
     <value>142, 20</value>
@@ -2921,14 +2930,17 @@
   <data name="&gt;&gt;lblEmail.Name" xml:space="preserve">
     <value>lblEmail</value>
   </data>
+  <data name="&gt;&gt;menuStrip1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
   <data name="lblPakeedShouma.TabIndex" type="System.Int32, mscorlib">
     <value>44</value>
   </data>
   <data name="addressDataGridViewTextBoxColumn.HeaderText" xml:space="preserve">
     <value>Address</value>
   </data>
-  <data name="cmbHoleya.TabIndex" type="System.Int32, mscorlib">
-    <value>45</value>
+  <data name="&gt;&gt;uploadContactsToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="lblContact.Size" type="System.Drawing.Size, System.Drawing">
     <value>47, 13</value>
@@ -3044,8 +3056,8 @@
   <data name="lblStatus.Text" xml:space="preserve">
     <value>Status:</value>
   </data>
-  <data name="&gt;&gt;lblStatus.ZOrder" xml:space="preserve">
-    <value>41</value>
+  <data name="lblPhone1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 230</value>
   </data>
   <data name="&gt;&gt;cmbInternalSerial.ZOrder" xml:space="preserve">
     <value>38</value>
@@ -3053,8 +3065,8 @@
   <data name="&gt;&gt;lblHoleya.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;changeLanguageToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
+    <value>18</value>
   </data>
   <data name="lblPhone2.Text" xml:space="preserve">
     <value>Phone2:</value>
@@ -3074,8 +3086,8 @@
   <data name="lblAddress.Location" type="System.Drawing.Point, System.Drawing">
     <value>12, 139</value>
   </data>
-  <data name="label1.TabIndex" type="System.Int32, mscorlib">
-    <value>25</value>
+  <data name="cmbHoleya.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
   </data>
   <data name="&gt;&gt;lnkClearSearch.Type" xml:space="preserve">
     <value>System.Windows.Forms.LinkLabel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -3085,6 +3097,9 @@
   </data>
   <data name="&gt;&gt;contactBindingSource.Name" xml:space="preserve">
     <value>contactBindingSource</value>
+  </data>
+  <data name="&gt;&gt;changeLanguageToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="internalSerialNumberDataGridViewTextBoxColumn.HeaderText" xml:space="preserve">
     <value>InternalSerialNumber</value>
@@ -3101,8 +3116,8 @@
   <data name="lblSearchOptions.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="txtCity.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
+  <data name="lnkClearSearch.Size" type="System.Drawing.Size, System.Drawing">
+    <value>68, 13</value>
   </data>
   <data name="lblId.TabIndex" type="System.Int32, mscorlib">
     <value>42</value>
@@ -3110,14 +3125,11 @@
   <data name="lblId.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="&gt;&gt;phone1DataGridViewTextBoxColumn.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="idDataGridViewTextBoxColumn.HeaderText" xml:space="preserve">
+    <value>Id</value>
   </data>
   <data name="phone2DataGridViewTextBoxColumn.HeaderText" xml:space="preserve">
     <value>Phone2</value>
-  </data>
-  <data name="&gt;&gt;label1.Parent" xml:space="preserve">
-    <value>$this</value>
   </data>
   <data name="lblEmail.Size" type="System.Drawing.Size, System.Drawing">
     <value>39, 13</value>
@@ -3146,8 +3158,8 @@
   <data name="lblStatus.Size" type="System.Drawing.Size, System.Drawing">
     <value>40, 13</value>
   </data>
-  <data name="&gt;&gt;internalSerialNumberDataGridViewTextBoxColumn.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="lblPhone3.Text" xml:space="preserve">
+    <value>Phone3:</value>
   </data>
   <data name="&gt;&gt;label1.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -3175,6 +3187,9 @@
   </data>
   <data name="&gt;&gt;label4.Name" xml:space="preserve">
     <value>label4</value>
+  </data>
+  <data name="uploadContactsToolStripMenuItem.Text" xml:space="preserve">
+    <value>Upload Contacts</value>
   </data>
   <data name="&gt;&gt;lblPakeedShouma.ZOrder" xml:space="preserve">
     <value>3</value>
@@ -3204,10 +3219,10 @@
     <value>12, 294</value>
   </data>
   <data name="txtContact.TabIndex" type="System.Int32, mscorlib">
-    <value>11</value>
+    <value>15</value>
   </data>
-  <data name="&gt;&gt;menuStrip1.Parent" xml:space="preserve">
-    <value>$this</value>
+  <data name="uploadContactsToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>180, 22</value>
   </data>
   <data name="&gt;&gt;lblCaseNumber.Name" xml:space="preserve">
     <value>lblCaseNumber</value>
@@ -3218,11 +3233,8 @@
   <data name="&gt;&gt;lblPakeedShouma.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="lblPhone3.Text" xml:space="preserve">
-    <value>Phone3:</value>
-  </data>
-  <data name="&gt;&gt;exitToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="settingsToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>170, 22</value>
   </data>
   <data name="&gt;&gt;cmbPakeedShouma.Parent" xml:space="preserve">
     <value>$this</value>
@@ -3236,17 +3248,23 @@
   <data name="label4.Location" type="System.Drawing.Point, System.Drawing">
     <value>13, 169</value>
   </data>
-  <data name="&gt;&gt;txtNotes.ZOrder" xml:space="preserve">
-    <value>24</value>
+  <data name="cmbID.Size" type="System.Drawing.Size, System.Drawing">
+    <value>107, 21</value>
   </data>
   <data name="&gt;&gt;cmbPakeedShouma.ZOrder" xml:space="preserve">
     <value>2</value>
+  </data>
+  <data name="&gt;&gt;exitToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;dataGridView1.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
   <data name="&gt;&gt;linkLabel1.Name" xml:space="preserve">
     <value>linkLabel1</value>
+  </data>
+  <data name="&gt;&gt;phone3DataGridViewTextBoxColumn.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;emailDataGridViewTextBoxColumn.Name" xml:space="preserve">
     <value>emailDataGridViewTextBoxColumn</value>
@@ -3272,9 +3290,6 @@
   <data name="&gt;&gt;cmbCaseNumber.ZOrder" xml:space="preserve">
     <value>6</value>
   </data>
-  <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
-    <value>18</value>
-  </data>
   <data name="btnSaveChanges.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
@@ -3283,6 +3298,9 @@
   </data>
   <data name="&gt;&gt;txtPhone3.ZOrder" xml:space="preserve">
     <value>32</value>
+  </data>
+  <data name="label1.TabIndex" type="System.Int32, mscorlib">
+    <value>25</value>
   </data>
   <data name="addNewContactToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>170, 22</value>
@@ -3305,11 +3323,14 @@
   <data name="&gt;&gt;label3.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;lblId.Name" xml:space="preserve">
-    <value>lblId</value>
+  <data name="&gt;&gt;uploadContactsToolStripMenuItem.Name" xml:space="preserve">
+    <value>uploadContactsToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;faxDataGridViewTextBoxColumn.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="toolsToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>48, 20</value>
+    <value>47, 20</value>
   </data>
   <data name="txtPhone2.Location" type="System.Drawing.Point, System.Drawing">
     <value>65, 259</value>

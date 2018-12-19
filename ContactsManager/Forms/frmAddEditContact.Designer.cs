@@ -84,7 +84,7 @@
             this.Controls.Add(this.btnOK);
             this.Controls.Add(this.lblInternalSerial);
             this.Controls.Add(this.lblName);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "frmAddEditContact";
             this.ResumeLayout(false);
             this.PerformLayout();

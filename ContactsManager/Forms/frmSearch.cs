@@ -27,6 +27,9 @@ namespace ContactsManager.Forms
                 chkPhone.Checked = options.HasFlag(frmMain.SearchOptions.Phone);
                 chkSerial.Checked = options.HasFlag(frmMain.SearchOptions.Serial);
                 chkStatus.Checked = options.HasFlag(frmMain.SearchOptions.Status);
+                chkId.Checked = options.HasFlag(frmMain.SearchOptions.Id);
+                chkInternalCase.Checked = options.HasFlag(frmMain.SearchOptions.InternalCase);
+                chkCaseNumber.Checked = options.HasFlag(frmMain.SearchOptions.Case);
             }
         }
 
@@ -46,6 +49,9 @@ namespace ContactsManager.Forms
                 if (chkSerial.Checked) Options |= frmMain.SearchOptions.Serial;
                 if (chkPhone.Checked) Options |= frmMain.SearchOptions.Phone;
                 if (chkStatus.Checked) Options |= frmMain.SearchOptions.Status;
+                if (chkId.Checked) Options |= frmMain.SearchOptions.Id;
+                if (chkInternalCase.Checked) Options |= frmMain.SearchOptions.InternalCase;
+                if (chkCaseNumber.Checked) Options |= frmMain.SearchOptions.Case;
             }
             this.Close();
         }
@@ -69,6 +75,9 @@ namespace ContactsManager.Forms
             chkPhone.CheckedChanged -= chkOther_CheckedChanged;
             chkSerial.CheckedChanged -= chkOther_CheckedChanged;
             chkStatus.CheckedChanged -= chkOther_CheckedChanged;
+            chkId.CheckedChanged -= chkOther_CheckedChanged;
+            chkInternalCase.CheckedChanged -= chkOther_CheckedChanged;
+            chkCaseNumber.CheckedChanged -= chkOther_CheckedChanged;
 
             chkAddress.Checked = false;
             chkContact.Checked = false;
@@ -77,6 +86,9 @@ namespace ContactsManager.Forms
             chkPhone.Checked = false;
             chkSerial.Checked = false;
             chkStatus.Checked = false;
+            chkId.Checked = false;
+            chkInternalCase.Checked = false; ;
+            chkCaseNumber.Checked = false; ;
 
             chkAddress.CheckedChanged += chkOther_CheckedChanged;
             chkContact.CheckedChanged += chkOther_CheckedChanged;
@@ -85,6 +97,9 @@ namespace ContactsManager.Forms
             chkPhone.CheckedChanged += chkOther_CheckedChanged;
             chkSerial.CheckedChanged += chkOther_CheckedChanged;
             chkStatus.CheckedChanged += chkOther_CheckedChanged;
+            chkId.CheckedChanged += chkOther_CheckedChanged;
+            chkInternalCase.CheckedChanged += chkOther_CheckedChanged;
+            chkCaseNumber.CheckedChanged += chkOther_CheckedChanged;
         }
     }
 }

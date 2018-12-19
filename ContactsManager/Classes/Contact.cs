@@ -58,23 +58,25 @@ namespace ContactsManager.Classes
 
         public Contact(XElement node)
         {
-            Name = node.Element(nameof(Name))?.Value;
-            Status = node.Element(nameof(Status))?.Value;
-            InternalSerialNumber = node.Element(nameof(InternalSerialNumber))?.Value;
-            ContactPerson = node.Element(nameof(ContactPerson))?.Value;
-            Notes = node.Element(nameof(Notes))?.Value;
-            Email = node.Element(nameof(Email))?.Value;
-            Fax = node.Element(nameof(Fax))?.Value;
-            Phone1 = node.Element(nameof(Phone1))?.Value;
-            Phone2 = node.Element(nameof(Phone2))?.Value;
-            Phone3 = node.Element(nameof(Phone3))?.Value;
-            PakeedShouma = node.Element(nameof(PakeedShouma))?.Value;
-            Holeya = node.Element(nameof(Holeya))?.Value;
-            Id = node.Element(nameof(Id))?.Value;
-            CaseNumber = node.Element(nameof(CaseNumber))?.Value;
-            Address = new Address(node.Element(nameof(Address))?.Attribute(nameof(Address.City)).Value,
-                node.Element(nameof(Address))?.Attribute(nameof(Address.Street)).Value,
-                node.Element(nameof(Address))?.Attribute(nameof(Address.ZipCode)).Value);
+            Name = node.Element(nameof(Name)) == null ? "" : node.Element(nameof(Name))?.Value;
+            Status = node.Element(nameof(Status)) == null ? "" : node.Element(nameof(Status))?.Value;
+            InternalSerialNumber = node.Element(nameof(InternalSerialNumber)) == null ? "" : node.Element(nameof(InternalSerialNumber))?.Value;
+            ContactPerson = node.Element(nameof(ContactPerson)) == null ? "" : node.Element(nameof(ContactPerson))?.Value;
+            Notes = node.Element(nameof(Notes)) == null ? "" : node.Element(nameof(Notes))?.Value;
+            Email = node.Element(nameof(Email)) == null ? "" : node.Element(nameof(Email))?.Value;
+            Fax = node.Element(nameof(Fax)) == null ? "" : node.Element(nameof(Fax))?.Value;
+            Phone1 = node.Element(nameof(Phone1)) == null ? "" : node.Element(nameof(Phone1))?.Value;
+            Phone2 = node.Element(nameof(Phone2)) == null ? "" : node.Element(nameof(Phone2))?.Value;
+            Phone3 = node.Element(nameof(Phone3)) == null ? "" : node.Element(nameof(Phone3))?.Value;
+            PakeedShouma = node.Element(nameof(PakeedShouma)) == null ? "" : node.Element(nameof(PakeedShouma))?.Value;
+            Holeya = node.Element(nameof(Holeya)) == null ? "" : node.Element(nameof(Holeya))?.Value;
+            Id = node.Element(nameof(Id)) == null ? "" : node.Element(nameof(Id)).Value;
+            CaseNumber = node.Element(nameof(CaseNumber)) == null ? "" : node.Element(nameof(CaseNumber))?.Value;
+            Address = node.Element(nameof(Address)) == null ? new Address("", "", "") :
+                new Address(
+                 node.Element(nameof(Address)).Attribute(nameof(Address.City)) == null ? "" : node.Element(nameof(Address)).Attribute(nameof(Address.City)).Value,
+                node.Element(nameof(Address)).Attribute(nameof(Address.Street)) == null ? "" : node.Element(nameof(Address)).Attribute(nameof(Address.Street)).Value,
+                node.Element(nameof(Address)).Attribute(nameof(Address.ZipCode)) == null ? "" : node.Element(nameof(Address)).Attribute(nameof(Address.ZipCode)).Value);
         }
     }
 }

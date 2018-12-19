@@ -39,6 +39,9 @@
             this.chkStatus = new System.Windows.Forms.CheckBox();
             this.chkAny = new System.Windows.Forms.CheckBox();
             this.button1 = new System.Windows.Forms.Button();
+            this.chkInternalCase = new System.Windows.Forms.CheckBox();
+            this.chkId = new System.Windows.Forms.CheckBox();
+            this.chkCaseNumber = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // lblSearchBy
@@ -109,11 +112,32 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // chkInternalCase
+            // 
+            resources.ApplyResources(this.chkInternalCase, "chkInternalCase");
+            this.chkInternalCase.Name = "chkInternalCase";
+            this.chkInternalCase.UseVisualStyleBackColor = true;
+            // 
+            // chkId
+            // 
+            resources.ApplyResources(this.chkId, "chkId");
+            this.chkId.Name = "chkId";
+            this.chkId.UseVisualStyleBackColor = true;
+            // 
+            // chkCaseNumber
+            // 
+            resources.ApplyResources(this.chkCaseNumber, "chkCaseNumber");
+            this.chkCaseNumber.Name = "chkCaseNumber";
+            this.chkCaseNumber.UseVisualStyleBackColor = true;
+            // 
             // frmSearch
             // 
             this.AcceptButton = this.button1;
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.chkCaseNumber);
+            this.Controls.Add(this.chkInternalCase);
+            this.Controls.Add(this.chkId);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.chkAny);
             this.Controls.Add(this.chkStatus);
@@ -124,7 +148,7 @@
             this.Controls.Add(this.chkSerial);
             this.Controls.Add(this.chkName);
             this.Controls.Add(this.lblSearchBy);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "frmSearch";
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -143,5 +167,8 @@
         private System.Windows.Forms.CheckBox chkStatus;
         private System.Windows.Forms.CheckBox chkAny;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.CheckBox chkInternalCase;
+        private System.Windows.Forms.CheckBox chkId;
+        private System.Windows.Forms.CheckBox chkCaseNumber;
     }
 }

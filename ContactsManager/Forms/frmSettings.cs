@@ -16,12 +16,13 @@ namespace ContactsManager.Forms
         {
             InitializeComponent();
             txtDBLocation.Text = Settings.SharedDBLocation;
+            txtLocalDBLocation.Text = Settings.LocalDB;
         }
 
         private void btnOK_Click(object sender, EventArgs e)
         {
             Settings.SharedDBLocation = txtDBLocation.Text;
-            Settings.LocalDBLocation = txtLocalDBLocation.Text;
+            Settings.LocalDB = txtLocalDBLocation.Text;
             Program.SaveSettings();
         }
     }

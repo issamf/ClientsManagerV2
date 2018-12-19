@@ -25,7 +25,10 @@ namespace ContactsManager
             Phone = 16,
             Address = 32,
             Contact = 64,
-            Email = 128
+            Email = 128,
+            Id = 256,
+            InternalCase = 512,
+            Case = 1024
         }
 
         public SearchOptions searchOptions = SearchOptions.Any;
@@ -53,11 +56,11 @@ namespace ContactsManager
                 txtPhone3.Text = newContact.Phone3;
 
 
-                cmbStatus.SelectedItem = newContact.Status;
-                cmbID.SelectedItem = newContact.Id;
-                cmbHoleya.SelectedItem = newContact.Holeya;
-                cmbPakeedShouma.SelectedItem = newContact.PakeedShouma;
-                cmbCaseNumber.SelectedItem = newContact.CaseNumber;
+                cmbStatus.SelectedItem = newContact.Status == "" ? null : newContact.Status;
+                cmbID.SelectedItem = newContact.Id == "" ? null : newContact.Id;
+                cmbHoleya.SelectedItem = newContact.Holeya == "" ? null : newContact.Holeya;
+                cmbPakeedShouma.SelectedItem = newContact.PakeedShouma == "" ? null : newContact.PakeedShouma;
+                cmbCaseNumber.SelectedItem = newContact.CaseNumber == "" ? null : newContact.CaseNumber;
 
 
 
@@ -86,7 +89,11 @@ namespace ContactsManager
                 txtPhone2.Text = "";
                 txtPhone3.Text = "";
 
-
+                cmbStatus.SelectedItem =  null ;
+                cmbID.SelectedItem =  null ;
+                cmbHoleya.SelectedItem = null ;
+                cmbPakeedShouma.SelectedItem = null ;
+                cmbCaseNumber.SelectedItem = null ;
 
                 cmbName.SelectedIndexChanged += cmbName_SelectedIndexChanged;
                 cmbInternalSerial.SelectedIndexChanged += cmbInternalSerial_SelectedIndexChanged;
@@ -217,7 +224,7 @@ namespace ContactsManager
             cmbName.DisplayMember = nameof(ContactsManager.Classes.Contact.Name);
             cmbInternalSerial.DisplayMember = nameof(ContactsManager.Classes.Contact.InternalSerialNumber);
             cmbStatus.DisplayMember = nameof(ContactsManager.Classes.Contact.Status);
-            FillFields();
+            FillFields(false);
         }
 
         private void BindingSource_ListChanged(object sender, ListChangedEventArgs e)
@@ -225,8 +232,9 @@ namespace ContactsManager
             throw new NotImplementedException();
         }
 
-        private void FillFields()
+        private void FillFields(bool tryKeepSelected)
         {
+            Contact selected = cmbName.SelectedItem as Contact;
             //cmbName.DataSource = Program.Contacts.Contacts;
             //cmbInternalSerial.DataSource = Program.Contacts.Contacts;
             cmbName.Items.Clear();
@@ -281,6 +289,15 @@ namespace ContactsManager
                 //cmbCaseNumber.SelectedItem = contact.CaseNumber;
                 cmbCaseNumber.SelectedIndex = -1;
 
+                
+            }
+            if (tryKeepSelected && cmbName.Items.Contains(selected))
+            {
+                cmbName.SelectedItem = selected;
+            }
+            else
+            {
+                CurrentContact = null;
             }
             FillGrid(Program.Contacts.Contacts);
         }
@@ -298,8 +315,10 @@ namespace ContactsManager
 
         private void btnSaveChanges_Click(object sender, EventArgs e)
         {
-            if (CurrentContact == null)
+            if (CurrentContact == null || cmbName.SelectedItem == null)
             {
+                MessageBox.Show("Invalid contact");
+
                 return;
             }
             using (frmAreYouSure ask = new frmAreYouSure())
@@ -327,40 +346,27 @@ namespace ContactsManager
             CurrentContact.PakeedShouma = cmbPakeedShouma.Text.Trim();
             CurrentContact.CaseNumber = cmbCaseNumber.Text.Trim();
             Program.SaveContacts();
+            FillFields(true);
         }
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             if (CurrentContact == null)
             {
+                MessageBox.Show("Invalid contact");
                 return;
             }
             var frmEdit = new frmAddEditContact(CurrentContact);
             if (frmEdit.ShowDialog() == DialogResult.OK)
             {
-                FillFields();
+                FillFields(true);
             }
 
             CurrentContact = frmEdit.Contact;
             frmEdit.Dispose();
         }
 
-        private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            if (CurrentContact == null)
-            {
-                return;
-            }
-            var frmEdit = new frmAddEditContact(CurrentContact);
-            if (frmEdit.ShowDialog() == DialogResult.OK)
-            {
-                FillFields();
-            }
-
-            CurrentContact = frmEdit.Contact;
-            frmEdit.Dispose();
-        }
-
+      
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -470,6 +476,33 @@ namespace ContactsManager
                     }
                 }
 
+                if (searchOptions.HasFlag(SearchOptions.Any) || searchOptions.HasFlag(SearchOptions.Id))
+                {
+                    if (contact.Id.ToLower().Trim().Contains(str))
+                    {
+                        contacts.Add(contact);
+                        continue;
+                    }
+                }
+
+                if (searchOptions.HasFlag(SearchOptions.Any) || searchOptions.HasFlag(SearchOptions.InternalCase))
+                {
+                    if (contact.InternalSerialNumber.ToLower().Trim().Contains(str))
+                    {
+                        contacts.Add(contact);
+                        continue;
+                    }
+                }
+
+                if (searchOptions.HasFlag(SearchOptions.Any) || searchOptions.HasFlag(SearchOptions.Case))
+                {
+                    if (contact.CaseNumber.ToLower().Trim().Contains(str))
+                    {
+                        contacts.Add(contact);
+                        continue;
+                    }
+                }
+
             }
             FillGrid(contacts);
         }
@@ -484,7 +517,13 @@ namespace ContactsManager
 
         private void settingsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            using (frmSettings settings = new frmSettings())
+            {
+                if (settings.ShowDialog() == DialogResult.OK)
+                {
+                    MessageBox.Show("Please restart the software now to avoid issues!", "Restart required!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
         }
 
         private void addNewContactToolStripMenuItem_Click(object sender, EventArgs e)
@@ -495,10 +534,58 @@ namespace ContactsManager
                 if (frmAdd.ShowDialog() == DialogResult.OK)
                 {
                     ContactsManager.Program.Contacts.Add(frmAdd.Contact);
-                    FillFields();
+                    FillFields(false);
                 }
 
                 CurrentContact = frmAdd.Contact;
+            }
+        }
+
+        private void uploadContactsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Program.UploadContacts();
+        }
+
+        private void cmbName_Validated(object sender, EventArgs e)
+        {
+            if (cmbName.SelectedItem == null)
+            {
+                CurrentContact = null;
+            }
+        }
+
+        private void importContactsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            using (OpenFileDialog ofd = new OpenFileDialog())
+            {
+                if (ofd.ShowDialog() == DialogResult.OK)
+                {
+                    DataTable dt = ImportExcel.ReadExcelFile(ofd.FileName);
+                    if (dt == null)
+                    {
+                        return;
+                    }
+                    else
+                    {
+                        Program.Contacts.Clear();
+                        foreach(DataRow row in dt.Rows)
+                        {                            
+                            Contact c = new Contact();
+                            c.Status = row[0].ToString();
+                            c.ContactPerson = row[1].ToString();
+                            c.InternalSerialNumber = row[2].ToString();
+                            c.Name = row[3].ToString();
+                            c.Id = row[4].ToString();
+                            c.Holeya = row[5].ToString();
+                            c.CaseNumber = row[7].ToString();
+                            c.Address = new Address(row[8].ToString(), "", "");
+                            c.Phone1 = row[9].ToString();
+                            Program.Contacts.Add(c);
+                        }
+                    }
+                    Program.SaveContacts();
+                    Program.LoadContacts();
+                }
             }
         }
     }

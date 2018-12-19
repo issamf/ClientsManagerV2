@@ -71,7 +71,7 @@
             this.Controls.Add(this.btnOK);
             this.Controls.Add(this.rbEnglish);
             this.Controls.Add(this.rbHebrew);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "frmChooseLanguage";
             this.ResumeLayout(false);
             this.PerformLayout();

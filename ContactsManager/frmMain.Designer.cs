@@ -60,6 +60,8 @@
             this.label3 = new System.Windows.Forms.Label();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.importContactsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.uploadContactsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addNewContactToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -83,6 +85,7 @@
             this.cmbPakeedShouma = new System.Windows.Forms.ComboBox();
             this.lblPakeedShouma = new System.Windows.Forms.Label();
             this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.statusDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.caseNumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.internalSerialNumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -94,7 +97,6 @@
             this.phone3DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.addressDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.faxDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.contactBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.menuStrip1.SuspendLayout();
@@ -115,6 +117,7 @@
             this.cmbName.Name = "cmbName";
             this.cmbName.SelectedIndexChanged += new System.EventHandler(this.cmbName_SelectedIndexChanged);
             this.cmbName.KeyUp += new System.Windows.Forms.KeyEventHandler(this.cmbName_KeyUp);
+            this.cmbName.Validated += new System.EventHandler(this.cmbName_Validated);
             // 
             // cmbStatus
             // 
@@ -215,11 +218,13 @@
             // dataGridView1
             // 
             resources.ApplyResources(this.dataGridView1, "dataGridView1");
+            this.dataGridView1.AllowUserToResizeRows = false;
             this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.nameDataGridViewTextBoxColumn,
+            this.idDataGridViewTextBoxColumn,
             this.statusDataGridViewTextBoxColumn,
             this.caseNumberDataGridViewTextBoxColumn,
             this.internalSerialNumberDataGridViewTextBoxColumn,
@@ -230,14 +235,14 @@
             this.phone2DataGridViewTextBoxColumn,
             this.phone3DataGridViewTextBoxColumn,
             this.addressDataGridViewTextBoxColumn,
-            this.faxDataGridViewTextBoxColumn,
-            this.idDataGridViewTextBoxColumn});
+            this.faxDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.contactBindingSource;
             this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView1.TabStop = false;
             this.dataGridView1.DoubleClick += new System.EventHandler(this.dataGridView1_DoubleClick);
             // 
             // txtCity
@@ -288,8 +293,22 @@
             // 
             resources.ApplyResources(this.fileToolStripMenuItem, "fileToolStripMenuItem");
             this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.importContactsToolStripMenuItem,
+            this.uploadContactsToolStripMenuItem,
             this.exitToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
+            // 
+            // importContactsToolStripMenuItem
+            // 
+            resources.ApplyResources(this.importContactsToolStripMenuItem, "importContactsToolStripMenuItem");
+            this.importContactsToolStripMenuItem.Name = "importContactsToolStripMenuItem";
+            this.importContactsToolStripMenuItem.Click += new System.EventHandler(this.importContactsToolStripMenuItem_Click);
+            // 
+            // uploadContactsToolStripMenuItem
+            // 
+            resources.ApplyResources(this.uploadContactsToolStripMenuItem, "uploadContactsToolStripMenuItem");
+            this.uploadContactsToolStripMenuItem.Name = "uploadContactsToolStripMenuItem";
+            this.uploadContactsToolStripMenuItem.Click += new System.EventHandler(this.uploadContactsToolStripMenuItem_Click);
             // 
             // exitToolStripMenuItem
             // 
@@ -341,6 +360,7 @@
             // 
             resources.ApplyResources(this.btnSearch, "btnSearch");
             this.btnSearch.Name = "btnSearch";
+            this.btnSearch.TabStop = false;
             this.btnSearch.UseVisualStyleBackColor = true;
             this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
@@ -348,6 +368,7 @@
             // 
             resources.ApplyResources(this.btnSaveChanges, "btnSaveChanges");
             this.btnSaveChanges.Name = "btnSaveChanges";
+            this.btnSaveChanges.TabStop = false;
             this.btnSaveChanges.UseVisualStyleBackColor = true;
             this.btnSaveChanges.Click += new System.EventHandler(this.btnSaveChanges_Click);
             // 
@@ -368,6 +389,7 @@
             // 
             resources.ApplyResources(this.txtSearch, "txtSearch");
             this.txtSearch.Name = "txtSearch";
+            this.txtSearch.TabStop = false;
             this.txtSearch.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtSearch_KeyUp);
             // 
             // lblSearchOptions
@@ -443,6 +465,13 @@
             resources.ApplyResources(this.nameDataGridViewTextBoxColumn, "nameDataGridViewTextBoxColumn");
             this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
             this.nameDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // idDataGridViewTextBoxColumn
+            // 
+            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
+            resources.ApplyResources(this.idDataGridViewTextBoxColumn, "idDataGridViewTextBoxColumn");
+            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            this.idDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // statusDataGridViewTextBoxColumn
             // 
@@ -520,13 +549,6 @@
             resources.ApplyResources(this.faxDataGridViewTextBoxColumn, "faxDataGridViewTextBoxColumn");
             this.faxDataGridViewTextBoxColumn.Name = "faxDataGridViewTextBoxColumn";
             this.faxDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // idDataGridViewTextBoxColumn
-            // 
-            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
-            resources.ApplyResources(this.idDataGridViewTextBoxColumn, "idDataGridViewTextBoxColumn");
-            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-            this.idDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // contactBindingSource
             // 
@@ -640,20 +662,7 @@
         private System.Windows.Forms.LinkLabel lnkClearSearch;
         private System.Windows.Forms.ToolStripMenuItem settingsToolStripMenuItem;
         private System.Windows.Forms.BindingSource contactBindingSource;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn statusDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn caseNumberDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn internalSerialNumberDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn caseNekoyeemDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn contactPersonDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn notesDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn emailDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn phone1DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn phone2DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn phone3DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn addressDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn faxDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
         private System.Windows.Forms.ComboBox cmbCaseNumber;
         private System.Windows.Forms.Label lblCaseNumber;
         private System.Windows.Forms.ComboBox cmbID;
@@ -663,6 +672,21 @@
         private System.Windows.Forms.ComboBox cmbPakeedShouma;
         private System.Windows.Forms.Label lblPakeedShouma;
         private System.Windows.Forms.ToolStripMenuItem addNewContactToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem uploadContactsToolStripMenuItem;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn statusDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn caseNumberDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn internalSerialNumberDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn contactPersonDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn notesDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn emailDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn phone1DataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn phone2DataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn phone3DataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn addressDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn faxDataGridViewTextBoxColumn;
+        private System.Windows.Forms.ToolStripMenuItem importContactsToolStripMenuItem;
     }
 }
 
