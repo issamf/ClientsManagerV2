@@ -42,6 +42,7 @@
             this.chkInternalCase = new System.Windows.Forms.CheckBox();
             this.chkId = new System.Windows.Forms.CheckBox();
             this.chkCaseNumber = new System.Windows.Forms.CheckBox();
+            this.chkCaseType = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // lblSearchBy
@@ -130,11 +131,18 @@
             this.chkCaseNumber.Name = "chkCaseNumber";
             this.chkCaseNumber.UseVisualStyleBackColor = true;
             // 
+            // chkCaseType
+            // 
+            resources.ApplyResources(this.chkCaseType, "chkCaseType");
+            this.chkCaseType.Name = "chkCaseType";
+            this.chkCaseType.UseVisualStyleBackColor = true;
+            // 
             // frmSearch
             // 
             this.AcceptButton = this.button1;
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.chkCaseType);
             this.Controls.Add(this.chkCaseNumber);
             this.Controls.Add(this.chkInternalCase);
             this.Controls.Add(this.chkId);
@@ -170,5 +178,6 @@
         private System.Windows.Forms.CheckBox chkInternalCase;
         private System.Windows.Forms.CheckBox chkId;
         private System.Windows.Forms.CheckBox chkCaseNumber;
+        private System.Windows.Forms.CheckBox chkCaseType;
     }
 }

@@ -10,17 +10,37 @@ namespace ContactsManager.Classes
     public class ContactsCollection
     {
         protected System.Collections.Concurrent.ConcurrentBag<Contact> contacts = new System.Collections.Concurrent.ConcurrentBag<Contact>();
+        protected bool notificationsEnabled = true;
 
-        //public delegate void ItemsChangedHandler(EventArgs e);
-        //protected event ItemsChangedHandler ItemsChanged;
-        //protected void OnItemsChanged(EventArgs e)
-        //{
-        //   // var x = bindingSource.AddNew();
-        //    if (ItemsChanged != null)
-        //    {
-        //        ItemsChanged(e);
-        //    }
-        //}
+        public delegate void ItemsChangedHandler(EventArgs e);
+        public event ItemsChangedHandler ItemsChanged;
+        protected void OnItemsChanged(EventArgs e)
+        {
+            if (!notificationsEnabled)
+            {
+                return;
+            }
+            // var x = bindingSource.AddNew();
+            if (ItemsChanged != null)
+            {
+                ItemsChanged(e);
+            }
+        }
+
+        public void EnableNotifications()
+        {
+            notificationsEnabled = true;
+        }
+
+        public void DisableNotifications()
+        {
+            notificationsEnabled = false;
+        }
+
+        public void TriggerUpdateNotification()
+        {
+            OnItemsChanged(new EventArgs());
+        }
 
         public Contact[] GetByName(string name)
         {
@@ -80,7 +100,7 @@ namespace ContactsManager.Classes
             if (!contacts.Contains(contact))
             {
                 contacts.Add(contact);
-               // OnItemsChanged(new EventArgs());
+                OnItemsChanged(new EventArgs());
                 return true;
             }
             else
@@ -100,6 +120,7 @@ namespace ContactsManager.Classes
         public void Clear()
         {
             contacts = new System.Collections.Concurrent.ConcurrentBag<Contact>();
+            OnItemsChanged(new EventArgs());
         }
 
         public List<Contact> Contacts
@@ -108,6 +129,17 @@ namespace ContactsManager.Classes
             {
                 return contacts.ToList();
             }
+        }
+
+        public string GetMD5()
+        {
+            StringBuilder sb = new StringBuilder();
+            foreach(var contact in contacts)
+            {
+                sb.Append(contact.ToString());
+                sb.Append(";");
+            }
+            return Utils.CreateMD5(sb.ToString());
         }
     }
 }

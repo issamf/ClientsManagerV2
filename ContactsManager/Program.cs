@@ -3,9 +3,12 @@ using System.Collections.Generic;
 using System.Data;
 using System.IO;
 using System.Linq;
+using System.Security.Cryptography;
+using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml;
 using System.Xml.Linq;
 
 
@@ -17,7 +20,8 @@ namespace ContactsManager
         public static Classes.ContactsCollection Contacts = new Classes.ContactsCollection();
         public static Timer timer = new Timer();
 
-
+        public static long CONTACTS_XML_VERSION = 0;
+        public static string LastMD5 = "";
 
         /// <summary>
         /// The main entry point for the application.
@@ -29,7 +33,7 @@ namespace ContactsManager
             Microsoft.Win32.RegistryKey key;
             key = Microsoft.Win32.Registry.CurrentUser.CreateSubKey("ContactsManager");
             var val = key.GetValue("Expired");
-            if (val != null && val.ToString() == "Expired" || DateTime.Now > new DateTime(2018,12,20))
+            if (val != null && val.ToString() == "Expired" || DateTime.Now > new DateTime(2019,3,1))
             {
                 key.SetValue("Expired", "True");
                 key.Close();
@@ -58,9 +62,18 @@ namespace ContactsManager
 
         private static void Timer_Tick(object sender, EventArgs e)
         {
-            //SaveContacts();
-            //SyncContacts();
-            //LoadContacts();
+            SaveContacts();
+            //CheckForUpdates();
+        }
+
+        public static void EnableAutoUpdate()
+        {
+            timer.Start();
+        }
+
+        public static void DisableAutoUpdate()
+        {
+            timer.Stop();
         }
 
         public static void UploadContacts()
@@ -68,23 +81,28 @@ namespace ContactsManager
             timer.Stop();
             try
             {
-                if (Directory.Exists(Settings.SharedDBLocation))
+                string sharedDir = Path.GetDirectoryName(Settings.SharedDBLocation);
+                if (!Directory.Exists(sharedDir))
                 {
-                    string prefix = Settings.LocalDB.ToLower().EndsWith("xml")? Settings.LocalDB : Settings.LocalDB.Substring(0, Settings.LocalDB.LastIndexOf('.'));
-                    string newName = prefix + "." + DateTime.Now.ToString("yyyy.MM.dd_HH.mm.ss");
-                    File.Copy(Settings.LocalDB, newName);
-                    File.Copy(newName, (Settings.SharedDBLocation.EndsWith("\\")? Settings.SharedDBLocation: Settings.SharedDBLocation+"\\") + Path.GetFileName(newName));
-                    Settings.LocalDB = newName;
-                    SaveSettings();
-                    LoadContacts();
+                    Directory.CreateDirectory(sharedDir);
                 }
-                else
+                if (File.Exists(Settings.SharedDBLocation))
                 {
-                    MessageBox.Show("Error: " + Settings.SharedDBLocation + " does not exist!");
-                    return;
+                    if (!Directory.Exists(sharedDir + "\\Backup"))
+                    {
+                        Directory.CreateDirectory(sharedDir + "\\Backup");
+                    }
+                    File.Copy(Settings.SharedDBLocation, sharedDir + "\\Backup\\" + Path.GetFileName(Settings.SharedDBLocation) + "." + DateTime.Now.ToString("yyyy.MM.dd_HH.mm.ss"));
                 }
+                File.Copy(Settings.LocalDB, Settings.SharedDBLocation, true);
+                File.WriteAllText(sharedDir + "\\FileVersion", CONTACTS_XML_VERSION.ToString());
+                //else
+                //{
+                //    MessageBox.Show("Error: " + Settings.SharedDBLocation + " does not exist!");
+                //    return;
+                //}
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show("Error: " + ex.Message);
             }
@@ -96,8 +114,49 @@ namespace ContactsManager
             System.Console.WriteLine("To-Do- Sync!");
         }
 
+        public static bool UpdateContacts()
+        {
+            timer.Stop();
+            try
+            {
+                string sharedDir = Path.GetDirectoryName(Settings.SharedDBLocation);
+                string localDir = Path.GetDirectoryName(Settings.LocalDB);
+                if (Directory.Exists(sharedDir) && Directory.Exists(localDir))
+                {
+                    if (File.Exists(Settings.LocalDB))
+                    {
+                        if (!Directory.Exists(localDir + "\\Backup"))
+                        {
+                            Directory.CreateDirectory(localDir + "\\Backup");
+                        }
+                        File.Copy(Settings.LocalDB, localDir + "\\Backup\\" + Path.GetFileName(Settings.LocalDB) + "." + DateTime.Now.ToString("yyyy.MM.dd_HH.mm.ss"));
+                    }
+                    
+                    File.Copy(Settings.SharedDBLocation, Settings.LocalDB, true);
+                    File.Copy(sharedDir + "\\FileVersion", localDir + "\\FileVersion", true);
+                    LoadContacts();
+                }
+                //else
+                //{
+                //    MessageBox.Show("Error: " + sharedDir + " does not exist!");
+                //    return false;
+                //}
+                return true;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+                return false;
+            }
+            finally
+            {
+                timer.Start();
+            }
+        }
+
         public static void LoadContacts()
         {
+            Contacts.DisableNotifications();
             Contacts.Clear();
             if (!File.Exists(Settings.LocalDB))
             {
@@ -105,29 +164,92 @@ namespace ContactsManager
             }
             XDocument doc = XDocument.Load(Settings.LocalDB);
             var root = doc.Element("Root");
-            var elmContacts = root.Elements("Contact");
-            foreach (var elmContact in elmContacts)
+            if (root.Element("Info") != null)
+            {
+                var info = root.Element("Info");
+                CONTACTS_XML_VERSION = info.Attribute("Version") != null ? long.Parse(info.Attribute("Version").Value) : 0;
+            }
+
+            var elmContacts = root.Element("Contacts");
+            var contactsElements = elmContacts.Elements("Contact");
+            foreach (var elmContact in contactsElements)
             {
                 ContactsManager.Classes.Contact contact = new Classes.Contact(elmContact);
                 Contacts.Add(contact);
+            }
+            LastMD5 = Contacts.GetMD5();
+            Contacts.EnableNotifications();
+            Contacts.TriggerUpdateNotification();
+        }
+
+        public static void CheckForUpdates()
+        {
+            bool shouldStart = false;
+            if (timer.Enabled)
+            {
+                timer.Stop();
+                shouldStart = true;
+            }
+            try
+            {
+                string sharedDir = Path.GetDirectoryName(Settings.SharedDBLocation);
+                if (Utils.GetSharedFileVersion(sharedDir + "\\FileVersion") > CONTACTS_XML_VERSION)
+                {
+                    DialogResult res = MessageBox.Show("There is an update available, please update first.\nUpdate now?\n(IMPORTANT: Your current changes will be lost!)",
+                        "An update is available."
+                        , MessageBoxButtons.YesNo,
+                        MessageBoxIcon.Information);
+                    if (res == DialogResult.Yes)
+                    {
+                        UpdateContacts();
+                    }
+                }
+            } catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                if (shouldStart)
+                {
+                    timer.Start();
+                }
             }
         }
 
         public static void SaveContacts()
         {
+            CheckForUpdates();
+            string sharedDir = Path.GetDirectoryName(Settings.SharedDBLocation);
+            if (Directory.Exists(sharedDir) && !File.Exists(Settings.SharedDBLocation))
+            {
+                File.Copy(Settings.LocalDB, Settings.SharedDBLocation);
+                File.WriteAllText(sharedDir + "\\FileVersion", CONTACTS_XML_VERSION.ToString());
+            }
+            var currentMD5 = Contacts.GetMD5();
+            if (LastMD5 == currentMD5)
+            {
+                return;
+            }
+            LastMD5 = currentMD5;
+            CONTACTS_XML_VERSION++;
             XDocument doc = new XDocument();
             XElement rootElm = new XElement("Root");
+            XElement infoElm = new XElement("Info", new XAttribute("Version", CONTACTS_XML_VERSION));
+            rootElm.Add(infoElm);
+            XElement contactsElm = new XElement("Contacts");
             foreach (var contact in Contacts.Contacts)
             {
-                rootElm.Add(contact.Save());
+                contactsElm.Add(contact.Save());
             }
+            rootElm.Add(contactsElm);
             doc.Add(rootElm);
             if (!Directory.Exists(Path.GetDirectoryName(Settings.LocalDB)))
             {
                 Directory.CreateDirectory(Path.GetDirectoryName(Settings.LocalDB));
             }
             doc.Save(Settings.LocalDB);
-
+            UploadContacts();
         }
 
        
@@ -154,6 +276,7 @@ namespace ContactsManager
                 Settings.LocalDB = sr.ReadLine().Trim();
             }
         }
+       
 
         public static void SaveSettings()
         {

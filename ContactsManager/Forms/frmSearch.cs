@@ -52,6 +52,7 @@ namespace ContactsManager.Forms
                 if (chkId.Checked) Options |= frmMain.SearchOptions.Id;
                 if (chkInternalCase.Checked) Options |= frmMain.SearchOptions.InternalCase;
                 if (chkCaseNumber.Checked) Options |= frmMain.SearchOptions.Case;
+                if (chkCaseType.Checked) Options |= frmMain.SearchOptions.Case;
             }
             this.Close();
         }

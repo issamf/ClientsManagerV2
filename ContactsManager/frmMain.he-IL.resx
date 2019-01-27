@@ -137,13 +137,13 @@
     <value>סטטוס:</value>
   </data>
   <data name="cmbInternalSerial.Location" type="System.Drawing.Point, System.Drawing">
-    <value>368, 45</value>
+    <value>325, 45</value>
   </data>
   <data name="cmbInternalSerial.Size" type="System.Drawing.Size, System.Drawing">
     <value>149, 21</value>
   </data>
   <data name="lblInternalSerial.Location" type="System.Drawing.Point, System.Drawing">
-    <value>282, 48</value>
+    <value>239, 48</value>
   </data>
   <data name="lblInternalSerial.Size" type="System.Drawing.Size, System.Drawing">
     <value>80, 13</value>
@@ -238,6 +238,45 @@
   <data name="lblNotes.Text" xml:space="preserve">
     <value>הערות:</value>
   </data>
+  <data name="nameDataGridViewTextBoxColumn.HeaderText" xml:space="preserve">
+    <value>שם</value>
+  </data>
+  <data name="idDataGridViewTextBoxColumn.HeaderText" xml:space="preserve">
+    <value>ת.ז.</value>
+  </data>
+  <data name="statusDataGridViewTextBoxColumn.HeaderText" xml:space="preserve">
+    <value>סטטוס</value>
+  </data>
+  <data name="caseNumberDataGridViewTextBoxColumn.HeaderText" xml:space="preserve">
+    <value>תיק ניכויים</value>
+  </data>
+  <data name="internalSerialNumberDataGridViewTextBoxColumn.HeaderText" xml:space="preserve">
+    <value>מס' תיק פנימי</value>
+  </data>
+  <data name="contactPersonDataGridViewTextBoxColumn.HeaderText" xml:space="preserve">
+    <value>איש קשר</value>
+  </data>
+  <data name="notesDataGridViewTextBoxColumn.HeaderText" xml:space="preserve">
+    <value>הערות</value>
+  </data>
+  <data name="emailDataGridViewTextBoxColumn.HeaderText" xml:space="preserve">
+    <value>דוא"ל</value>
+  </data>
+  <data name="phone1DataGridViewTextBoxColumn.HeaderText" xml:space="preserve">
+    <value>טלפון</value>
+  </data>
+  <data name="phone2DataGridViewTextBoxColumn.HeaderText" xml:space="preserve">
+    <value>טלפון 2</value>
+  </data>
+  <data name="phone3DataGridViewTextBoxColumn.HeaderText" xml:space="preserve">
+    <value>טלפון 3</value>
+  </data>
+  <data name="addressDataGridViewTextBoxColumn.HeaderText" xml:space="preserve">
+    <value>כתובת</value>
+  </data>
+  <data name="faxDataGridViewTextBoxColumn.HeaderText" xml:space="preserve">
+    <value>פקס</value>
+  </data>
   <data name="dataGridView1.Location" type="System.Drawing.Point, System.Drawing">
     <value>15, 529</value>
   </data>
@@ -289,17 +328,14 @@
   <data name="label3.Text" xml:space="preserve">
     <value>מס' דירה</value>
   </data>
+  <data name="importContactsToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>153, 22</value>
+  </data>
   <data name="importContactsToolStripMenuItem.Text" xml:space="preserve">
     <value>ייבוא אנשי קשר</value>
   </data>
-  <data name="uploadContactsToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
-  </data>
-  <data name="uploadContactsToolStripMenuItem.Text" xml:space="preserve">
-    <value>סנכרון לרשת</value>
-  </data>
   <data name="exitToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
+    <value>153, 22</value>
   </data>
   <data name="exitToolStripMenuItem.Text" xml:space="preserve">
     <value>י&amp;ציאה</value>
@@ -333,6 +369,9 @@
   </data>
   <data name="toolsToolStripMenuItem.Text" xml:space="preserve">
     <value>&amp;כלים</value>
+  </data>
+  <data name="aboutToolStripMenuItem.Text" xml:space="preserve">
+    <value>או&amp;דות</value>
   </data>
   <data name="helpToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>45, 20</value>
@@ -395,10 +434,10 @@
     <value>187, 91</value>
   </data>
   <data name="lblCaseNumber.Size" type="System.Drawing.Size, System.Drawing">
-    <value>48, 13</value>
+    <value>71, 13</value>
   </data>
   <data name="lblCaseNumber.Text" xml:space="preserve">
-    <value>מס' תיק:</value>
+    <value>תיק ניכויים:</value>
   </data>
   <data name="cmbID.Location" type="System.Drawing.Point, System.Drawing">
     <value>36, 88</value>
@@ -425,20 +464,32 @@
     <value>חוליה:</value>
   </data>
   <data name="cmbPakeedShouma.Location" type="System.Drawing.Point, System.Drawing">
-    <value>639, 45</value>
+    <value>694, 88</value>
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="lblPakeedShouma.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="lblPakeedShouma.Location" type="System.Drawing.Point, System.Drawing">
-    <value>566, 48</value>
+    <value>621, 91</value>
   </data>
   <data name="lblPakeedShouma.Size" type="System.Drawing.Size, System.Drawing">
     <value>67, 13</value>
   </data>
   <data name="lblPakeedShouma.Text" xml:space="preserve">
     <value>פקיד שומה:</value>
+  </data>
+  <data name="cmbCaseType.Size" type="System.Drawing.Size, System.Drawing">
+    <value>149, 21</value>
+  </data>
+  <data name="lblCaseType.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblCaseType.Size" type="System.Drawing.Size, System.Drawing">
+    <value>50, 13</value>
+  </data>
+  <data name="lblCaseType.Text" xml:space="preserve">
+    <value>סוג תיק:</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
     <value>1153, 663</value>

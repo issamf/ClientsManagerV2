@@ -51,6 +51,20 @@
             this.txtNotes = new System.Windows.Forms.TextBox();
             this.lblNotes = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.statusDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.caseNumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.internalSerialNumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.contactPersonDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.notesDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.emailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.phone1DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.phone2DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.phone3DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.addressDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.faxDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.contactBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.txtCity = new System.Windows.Forms.TextBox();
             this.lblAddress = new System.Windows.Forms.Label();
             this.txtStreet = new System.Windows.Forms.TextBox();
@@ -61,13 +75,13 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.importContactsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.uploadContactsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addNewContactToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.changeLanguageToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.settingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.btnClearFields = new System.Windows.Forms.Button();
             this.btnSearch = new System.Windows.Forms.Button();
             this.btnSaveChanges = new System.Windows.Forms.Button();
@@ -84,23 +98,11 @@
             this.lblHoleya = new System.Windows.Forms.Label();
             this.cmbPakeedShouma = new System.Windows.Forms.ComboBox();
             this.lblPakeedShouma = new System.Windows.Forms.Label();
-            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.statusDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.caseNumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.internalSerialNumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.contactPersonDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.notesDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.emailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.phone1DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.phone2DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.phone3DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.addressDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.faxDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.contactBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.cmbCaseType = new System.Windows.Forms.ComboBox();
+            this.lblCaseType = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.contactBindingSource)).BeginInit();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblName
@@ -245,6 +247,101 @@
             this.dataGridView1.TabStop = false;
             this.dataGridView1.DoubleClick += new System.EventHandler(this.dataGridView1_DoubleClick);
             // 
+            // nameDataGridViewTextBoxColumn
+            // 
+            this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
+            resources.ApplyResources(this.nameDataGridViewTextBoxColumn, "nameDataGridViewTextBoxColumn");
+            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
+            this.nameDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // idDataGridViewTextBoxColumn
+            // 
+            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
+            resources.ApplyResources(this.idDataGridViewTextBoxColumn, "idDataGridViewTextBoxColumn");
+            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            this.idDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // statusDataGridViewTextBoxColumn
+            // 
+            this.statusDataGridViewTextBoxColumn.DataPropertyName = "Status";
+            resources.ApplyResources(this.statusDataGridViewTextBoxColumn, "statusDataGridViewTextBoxColumn");
+            this.statusDataGridViewTextBoxColumn.Name = "statusDataGridViewTextBoxColumn";
+            this.statusDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // caseNumberDataGridViewTextBoxColumn
+            // 
+            this.caseNumberDataGridViewTextBoxColumn.DataPropertyName = "CaseNumber";
+            resources.ApplyResources(this.caseNumberDataGridViewTextBoxColumn, "caseNumberDataGridViewTextBoxColumn");
+            this.caseNumberDataGridViewTextBoxColumn.Name = "caseNumberDataGridViewTextBoxColumn";
+            this.caseNumberDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // internalSerialNumberDataGridViewTextBoxColumn
+            // 
+            this.internalSerialNumberDataGridViewTextBoxColumn.DataPropertyName = "InternalSerialNumber";
+            resources.ApplyResources(this.internalSerialNumberDataGridViewTextBoxColumn, "internalSerialNumberDataGridViewTextBoxColumn");
+            this.internalSerialNumberDataGridViewTextBoxColumn.Name = "internalSerialNumberDataGridViewTextBoxColumn";
+            this.internalSerialNumberDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // contactPersonDataGridViewTextBoxColumn
+            // 
+            this.contactPersonDataGridViewTextBoxColumn.DataPropertyName = "ContactPerson";
+            resources.ApplyResources(this.contactPersonDataGridViewTextBoxColumn, "contactPersonDataGridViewTextBoxColumn");
+            this.contactPersonDataGridViewTextBoxColumn.Name = "contactPersonDataGridViewTextBoxColumn";
+            this.contactPersonDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // notesDataGridViewTextBoxColumn
+            // 
+            this.notesDataGridViewTextBoxColumn.DataPropertyName = "Notes";
+            resources.ApplyResources(this.notesDataGridViewTextBoxColumn, "notesDataGridViewTextBoxColumn");
+            this.notesDataGridViewTextBoxColumn.Name = "notesDataGridViewTextBoxColumn";
+            this.notesDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // emailDataGridViewTextBoxColumn
+            // 
+            this.emailDataGridViewTextBoxColumn.DataPropertyName = "Email";
+            resources.ApplyResources(this.emailDataGridViewTextBoxColumn, "emailDataGridViewTextBoxColumn");
+            this.emailDataGridViewTextBoxColumn.Name = "emailDataGridViewTextBoxColumn";
+            this.emailDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // phone1DataGridViewTextBoxColumn
+            // 
+            this.phone1DataGridViewTextBoxColumn.DataPropertyName = "Phone1";
+            resources.ApplyResources(this.phone1DataGridViewTextBoxColumn, "phone1DataGridViewTextBoxColumn");
+            this.phone1DataGridViewTextBoxColumn.Name = "phone1DataGridViewTextBoxColumn";
+            this.phone1DataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // phone2DataGridViewTextBoxColumn
+            // 
+            this.phone2DataGridViewTextBoxColumn.DataPropertyName = "Phone2";
+            resources.ApplyResources(this.phone2DataGridViewTextBoxColumn, "phone2DataGridViewTextBoxColumn");
+            this.phone2DataGridViewTextBoxColumn.Name = "phone2DataGridViewTextBoxColumn";
+            this.phone2DataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // phone3DataGridViewTextBoxColumn
+            // 
+            this.phone3DataGridViewTextBoxColumn.DataPropertyName = "Phone3";
+            resources.ApplyResources(this.phone3DataGridViewTextBoxColumn, "phone3DataGridViewTextBoxColumn");
+            this.phone3DataGridViewTextBoxColumn.Name = "phone3DataGridViewTextBoxColumn";
+            this.phone3DataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // addressDataGridViewTextBoxColumn
+            // 
+            this.addressDataGridViewTextBoxColumn.DataPropertyName = "Address";
+            resources.ApplyResources(this.addressDataGridViewTextBoxColumn, "addressDataGridViewTextBoxColumn");
+            this.addressDataGridViewTextBoxColumn.Name = "addressDataGridViewTextBoxColumn";
+            this.addressDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // faxDataGridViewTextBoxColumn
+            // 
+            this.faxDataGridViewTextBoxColumn.DataPropertyName = "Fax";
+            resources.ApplyResources(this.faxDataGridViewTextBoxColumn, "faxDataGridViewTextBoxColumn");
+            this.faxDataGridViewTextBoxColumn.Name = "faxDataGridViewTextBoxColumn";
+            this.faxDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // contactBindingSource
+            // 
+            this.contactBindingSource.DataSource = typeof(ContactsManager.Classes.Contact);
+            // 
             // txtCity
             // 
             resources.ApplyResources(this.txtCity, "txtCity");
@@ -294,7 +391,6 @@
             resources.ApplyResources(this.fileToolStripMenuItem, "fileToolStripMenuItem");
             this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.importContactsToolStripMenuItem,
-            this.uploadContactsToolStripMenuItem,
             this.exitToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
             // 
@@ -303,12 +399,6 @@
             resources.ApplyResources(this.importContactsToolStripMenuItem, "importContactsToolStripMenuItem");
             this.importContactsToolStripMenuItem.Name = "importContactsToolStripMenuItem";
             this.importContactsToolStripMenuItem.Click += new System.EventHandler(this.importContactsToolStripMenuItem_Click);
-            // 
-            // uploadContactsToolStripMenuItem
-            // 
-            resources.ApplyResources(this.uploadContactsToolStripMenuItem, "uploadContactsToolStripMenuItem");
-            this.uploadContactsToolStripMenuItem.Name = "uploadContactsToolStripMenuItem";
-            this.uploadContactsToolStripMenuItem.Click += new System.EventHandler(this.uploadContactsToolStripMenuItem_Click);
             // 
             // exitToolStripMenuItem
             // 
@@ -346,7 +436,15 @@
             // helpToolStripMenuItem
             // 
             resources.ApplyResources(this.helpToolStripMenuItem, "helpToolStripMenuItem");
+            this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.aboutToolStripMenuItem});
             this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
+            // 
+            // aboutToolStripMenuItem
+            // 
+            resources.ApplyResources(this.aboutToolStripMenuItem, "aboutToolStripMenuItem");
+            this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
+            this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
             // 
             // btnClearFields
             // 
@@ -459,105 +557,25 @@
             resources.ApplyResources(this.lblPakeedShouma, "lblPakeedShouma");
             this.lblPakeedShouma.Name = "lblPakeedShouma";
             // 
-            // nameDataGridViewTextBoxColumn
+            // cmbCaseType
             // 
-            this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
-            resources.ApplyResources(this.nameDataGridViewTextBoxColumn, "nameDataGridViewTextBoxColumn");
-            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
-            this.nameDataGridViewTextBoxColumn.ReadOnly = true;
+            resources.ApplyResources(this.cmbCaseType, "cmbCaseType");
+            this.cmbCaseType.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cmbCaseType.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cmbCaseType.FormattingEnabled = true;
+            this.cmbCaseType.Name = "cmbCaseType";
             // 
-            // idDataGridViewTextBoxColumn
+            // lblCaseType
             // 
-            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
-            resources.ApplyResources(this.idDataGridViewTextBoxColumn, "idDataGridViewTextBoxColumn");
-            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-            this.idDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // statusDataGridViewTextBoxColumn
-            // 
-            this.statusDataGridViewTextBoxColumn.DataPropertyName = "Status";
-            resources.ApplyResources(this.statusDataGridViewTextBoxColumn, "statusDataGridViewTextBoxColumn");
-            this.statusDataGridViewTextBoxColumn.Name = "statusDataGridViewTextBoxColumn";
-            this.statusDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // caseNumberDataGridViewTextBoxColumn
-            // 
-            this.caseNumberDataGridViewTextBoxColumn.DataPropertyName = "CaseNumber";
-            resources.ApplyResources(this.caseNumberDataGridViewTextBoxColumn, "caseNumberDataGridViewTextBoxColumn");
-            this.caseNumberDataGridViewTextBoxColumn.Name = "caseNumberDataGridViewTextBoxColumn";
-            this.caseNumberDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // internalSerialNumberDataGridViewTextBoxColumn
-            // 
-            this.internalSerialNumberDataGridViewTextBoxColumn.DataPropertyName = "InternalSerialNumber";
-            resources.ApplyResources(this.internalSerialNumberDataGridViewTextBoxColumn, "internalSerialNumberDataGridViewTextBoxColumn");
-            this.internalSerialNumberDataGridViewTextBoxColumn.Name = "internalSerialNumberDataGridViewTextBoxColumn";
-            this.internalSerialNumberDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // contactPersonDataGridViewTextBoxColumn
-            // 
-            this.contactPersonDataGridViewTextBoxColumn.DataPropertyName = "ContactPerson";
-            resources.ApplyResources(this.contactPersonDataGridViewTextBoxColumn, "contactPersonDataGridViewTextBoxColumn");
-            this.contactPersonDataGridViewTextBoxColumn.Name = "contactPersonDataGridViewTextBoxColumn";
-            this.contactPersonDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // notesDataGridViewTextBoxColumn
-            // 
-            this.notesDataGridViewTextBoxColumn.DataPropertyName = "Notes";
-            resources.ApplyResources(this.notesDataGridViewTextBoxColumn, "notesDataGridViewTextBoxColumn");
-            this.notesDataGridViewTextBoxColumn.Name = "notesDataGridViewTextBoxColumn";
-            this.notesDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // emailDataGridViewTextBoxColumn
-            // 
-            this.emailDataGridViewTextBoxColumn.DataPropertyName = "Email";
-            resources.ApplyResources(this.emailDataGridViewTextBoxColumn, "emailDataGridViewTextBoxColumn");
-            this.emailDataGridViewTextBoxColumn.Name = "emailDataGridViewTextBoxColumn";
-            this.emailDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // phone1DataGridViewTextBoxColumn
-            // 
-            this.phone1DataGridViewTextBoxColumn.DataPropertyName = "Phone1";
-            resources.ApplyResources(this.phone1DataGridViewTextBoxColumn, "phone1DataGridViewTextBoxColumn");
-            this.phone1DataGridViewTextBoxColumn.Name = "phone1DataGridViewTextBoxColumn";
-            this.phone1DataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // phone2DataGridViewTextBoxColumn
-            // 
-            this.phone2DataGridViewTextBoxColumn.DataPropertyName = "Phone2";
-            resources.ApplyResources(this.phone2DataGridViewTextBoxColumn, "phone2DataGridViewTextBoxColumn");
-            this.phone2DataGridViewTextBoxColumn.Name = "phone2DataGridViewTextBoxColumn";
-            this.phone2DataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // phone3DataGridViewTextBoxColumn
-            // 
-            this.phone3DataGridViewTextBoxColumn.DataPropertyName = "Phone3";
-            resources.ApplyResources(this.phone3DataGridViewTextBoxColumn, "phone3DataGridViewTextBoxColumn");
-            this.phone3DataGridViewTextBoxColumn.Name = "phone3DataGridViewTextBoxColumn";
-            this.phone3DataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // addressDataGridViewTextBoxColumn
-            // 
-            this.addressDataGridViewTextBoxColumn.DataPropertyName = "Address";
-            resources.ApplyResources(this.addressDataGridViewTextBoxColumn, "addressDataGridViewTextBoxColumn");
-            this.addressDataGridViewTextBoxColumn.Name = "addressDataGridViewTextBoxColumn";
-            this.addressDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // faxDataGridViewTextBoxColumn
-            // 
-            this.faxDataGridViewTextBoxColumn.DataPropertyName = "Fax";
-            resources.ApplyResources(this.faxDataGridViewTextBoxColumn, "faxDataGridViewTextBoxColumn");
-            this.faxDataGridViewTextBoxColumn.Name = "faxDataGridViewTextBoxColumn";
-            this.faxDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // contactBindingSource
-            // 
-            this.contactBindingSource.DataSource = typeof(ContactsManager.Classes.Contact);
+            resources.ApplyResources(this.lblCaseType, "lblCaseType");
+            this.lblCaseType.Name = "lblCaseType";
             // 
             // frmMain
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.cmbCaseType);
+            this.Controls.Add(this.lblCaseType);
             this.Controls.Add(this.cmbHoleya);
             this.Controls.Add(this.lblHoleya);
             this.Controls.Add(this.cmbPakeedShouma);
@@ -608,9 +626,9 @@
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmMain_FormClosing);
             this.Load += new System.EventHandler(this.frmMain_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.contactBindingSource)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.contactBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -672,7 +690,7 @@
         private System.Windows.Forms.ComboBox cmbPakeedShouma;
         private System.Windows.Forms.Label lblPakeedShouma;
         private System.Windows.Forms.ToolStripMenuItem addNewContactToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem uploadContactsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem importContactsToolStripMenuItem;
         private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn statusDataGridViewTextBoxColumn;
@@ -686,7 +704,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn phone3DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn addressDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn faxDataGridViewTextBoxColumn;
-        private System.Windows.Forms.ToolStripMenuItem importContactsToolStripMenuItem;
+        private System.Windows.Forms.ComboBox cmbCaseType;
+        private System.Windows.Forms.Label lblCaseType;
+        private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
     }
 }
 

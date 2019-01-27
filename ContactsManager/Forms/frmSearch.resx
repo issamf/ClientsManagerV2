@@ -118,387 +118,420 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="lblSearchBy.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="lblSearchBy.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 31</value>
-  </data>
-  <data name="lblSearchBy.Size" type="System.Drawing.Size, System.Drawing">
-    <value>58, 13</value>
-  </data>
-  <data name="lblSearchBy.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="lblSearchBy.Text" xml:space="preserve">
-    <value>Search by:</value>
-  </data>
-  <data name="&gt;&gt;lblSearchBy.Name" xml:space="preserve">
-    <value>lblSearchBy</value>
-  </data>
-  <data name="&gt;&gt;lblSearchBy.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblSearchBy.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;lblSearchBy.ZOrder" xml:space="preserve">
-    <value>12</value>
-  </data>
   <data name="chkName.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
-  </data>
-  <data name="chkName.Location" type="System.Drawing.Point, System.Drawing">
-    <value>74, 64</value>
-  </data>
-  <data name="chkName.Size" type="System.Drawing.Size, System.Drawing">
-    <value>54, 17</value>
-  </data>
-  <data name="chkName.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="chkName.Text" xml:space="preserve">
-    <value>Name</value>
-  </data>
-  <data name="&gt;&gt;chkName.Name" xml:space="preserve">
-    <value>chkName</value>
-  </data>
-  <data name="&gt;&gt;chkName.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;chkName.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;chkName.ZOrder" xml:space="preserve">
-    <value>11</value>
-  </data>
-  <data name="chkSerial.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="chkSerial.Location" type="System.Drawing.Point, System.Drawing">
-    <value>74, 87</value>
-  </data>
-  <data name="chkSerial.Size" type="System.Drawing.Size, System.Drawing">
-    <value>92, 17</value>
-  </data>
-  <data name="chkSerial.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="chkSerial.Text" xml:space="preserve">
-    <value>Serial Number</value>
-  </data>
-  <data name="&gt;&gt;chkSerial.Name" xml:space="preserve">
-    <value>chkSerial</value>
-  </data>
-  <data name="&gt;&gt;chkSerial.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;chkSerial.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;chkSerial.ZOrder" xml:space="preserve">
-    <value>10</value>
-  </data>
-  <data name="chkPhone.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="chkPhone.Location" type="System.Drawing.Point, System.Drawing">
-    <value>74, 130</value>
-  </data>
-  <data name="chkPhone.Size" type="System.Drawing.Size, System.Drawing">
-    <value>57, 17</value>
-  </data>
-  <data name="chkPhone.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="chkPhone.Text" xml:space="preserve">
-    <value>Phone</value>
-  </data>
-  <data name="&gt;&gt;chkPhone.Name" xml:space="preserve">
-    <value>chkPhone</value>
-  </data>
-  <data name="&gt;&gt;chkPhone.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;chkPhone.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;chkPhone.ZOrder" xml:space="preserve">
-    <value>9</value>
-  </data>
-  <data name="chkAddress.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="chkAddress.Location" type="System.Drawing.Point, System.Drawing">
-    <value>74, 153</value>
-  </data>
-  <data name="chkAddress.Size" type="System.Drawing.Size, System.Drawing">
-    <value>64, 17</value>
-  </data>
-  <data name="chkAddress.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="chkAddress.Text" xml:space="preserve">
-    <value>Address</value>
-  </data>
-  <data name="&gt;&gt;chkAddress.Name" xml:space="preserve">
-    <value>chkAddress</value>
-  </data>
-  <data name="&gt;&gt;chkAddress.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;chkAddress.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;chkAddress.ZOrder" xml:space="preserve">
-    <value>8</value>
-  </data>
-  <data name="chkContact.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="chkContact.Location" type="System.Drawing.Point, System.Drawing">
-    <value>74, 176</value>
-  </data>
-  <data name="chkContact.Size" type="System.Drawing.Size, System.Drawing">
-    <value>99, 17</value>
-  </data>
-  <data name="chkContact.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
-  </data>
-  <data name="chkContact.Text" xml:space="preserve">
-    <value>Contact Person</value>
-  </data>
-  <data name="&gt;&gt;chkContact.Name" xml:space="preserve">
-    <value>chkContact</value>
-  </data>
-  <data name="&gt;&gt;chkContact.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;chkContact.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;chkContact.ZOrder" xml:space="preserve">
-    <value>7</value>
-  </data>
-  <data name="chkEmail.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="chkEmail.Location" type="System.Drawing.Point, System.Drawing">
-    <value>74, 199</value>
-  </data>
-  <data name="chkEmail.Size" type="System.Drawing.Size, System.Drawing">
-    <value>55, 17</value>
-  </data>
-  <data name="chkEmail.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
-  </data>
-  <data name="chkEmail.Text" xml:space="preserve">
-    <value>E-Mail</value>
-  </data>
-  <data name="&gt;&gt;chkEmail.Name" xml:space="preserve">
-    <value>chkEmail</value>
-  </data>
-  <data name="&gt;&gt;chkEmail.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;chkEmail.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;chkEmail.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <data name="chkStatus.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="chkStatus.Location" type="System.Drawing.Point, System.Drawing">
-    <value>74, 107</value>
-  </data>
-  <data name="chkStatus.Size" type="System.Drawing.Size, System.Drawing">
-    <value>56, 17</value>
-  </data>
-  <data name="chkStatus.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
-  </data>
-  <data name="chkStatus.Text" xml:space="preserve">
-    <value>Status</value>
-  </data>
-  <data name="&gt;&gt;chkStatus.Name" xml:space="preserve">
-    <value>chkStatus</value>
-  </data>
-  <data name="&gt;&gt;chkStatus.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;chkStatus.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;chkStatus.ZOrder" xml:space="preserve">
-    <value>5</value>
   </data>
   <data name="chkAny.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="chkAny.Location" type="System.Drawing.Point, System.Drawing">
-    <value>74, 30</value>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>226, 366</value>
   </data>
-  <data name="chkAny.Size" type="System.Drawing.Size, System.Drawing">
-    <value>71, 17</value>
+  <data name="&gt;&gt;chkCaseNumber.ZOrder" xml:space="preserve">
+    <value>1</value>
   </data>
-  <data name="chkAny.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
+  <data name="chkEmail.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
-  <data name="chkAny.Text" xml:space="preserve">
-    <value>Free Text</value>
-  </data>
-  <data name="&gt;&gt;chkAny.Name" xml:space="preserve">
-    <value>chkAny</value>
-  </data>
-  <data name="&gt;&gt;chkAny.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;chkAny.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;chkAny.ZOrder" xml:space="preserve">
+  <data name="chkAddress.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
-  </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="button1.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Bottom, Right</value>
-  </data>
-  <data name="button1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>139, 331</value>
-  </data>
-  <data name="button1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 23</value>
-  </data>
-  <data name="button1.TabIndex" type="System.Int32, mscorlib">
-    <value>9</value>
-  </data>
-  <data name="button1.Text" xml:space="preserve">
-    <value>Close</value>
-  </data>
-  <data name="&gt;&gt;button1.Name" xml:space="preserve">
-    <value>button1</value>
-  </data>
-  <data name="&gt;&gt;button1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;button1.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
   <data name="&gt;&gt;button1.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="chkInternalCase.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="chkInternalCase.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="chkInternalCase.Location" type="System.Drawing.Point, System.Drawing">
-    <value>74, 245</value>
-  </data>
-  <data name="chkInternalCase.Size" type="System.Drawing.Size, System.Drawing">
-    <value>126, 17</value>
-  </data>
-  <data name="chkInternalCase.TabIndex" type="System.Int32, mscorlib">
-    <value>11</value>
-  </data>
-  <data name="chkInternalCase.Text" xml:space="preserve">
-    <value>Internal Case number</value>
-  </data>
-  <data name="&gt;&gt;chkInternalCase.Name" xml:space="preserve">
-    <value>chkInternalCase</value>
-  </data>
-  <data name="&gt;&gt;chkInternalCase.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;chkInternalCase.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;chkInternalCase.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>4</value>
   </data>
   <data name="chkId.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="chkId.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
+  <data name="&gt;&gt;chkAny.ZOrder" xml:space="preserve">
+    <value>5</value>
   </data>
-  <data name="chkId.Location" type="System.Drawing.Point, System.Drawing">
-    <value>74, 222</value>
+  <data name="chkEmail.Location" type="System.Drawing.Point, System.Drawing">
+    <value>74, 199</value>
   </data>
-  <data name="chkId.Size" type="System.Drawing.Size, System.Drawing">
-    <value>35, 17</value>
-  </data>
-  <data name="chkId.TabIndex" type="System.Int32, mscorlib">
-    <value>10</value>
+  <data name="&gt;&gt;chkEmail.Parent" xml:space="preserve">
+    <value>$this</value>
   </data>
   <data name="chkId.Text" xml:space="preserve">
     <value>Id</value>
   </data>
+  <data name="button1.Text" xml:space="preserve">
+    <value>Close</value>
+  </data>
+  <data name="chkName.Size" type="System.Drawing.Size, System.Drawing">
+    <value>54, 17</value>
+  </data>
+  <data name="&gt;&gt;chkId.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="&gt;&gt;chkId.Name" xml:space="preserve">
     <value>chkId</value>
   </data>
-  <data name="&gt;&gt;chkId.Type" xml:space="preserve">
+  <data name="chkSerial.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="chkPhone.Location" type="System.Drawing.Point, System.Drawing">
+    <value>74, 130</value>
+  </data>
+  <data name="button1.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="chkPhone.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;chkCaseType.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="chkAny.Location" type="System.Drawing.Point, System.Drawing">
+    <value>74, 30</value>
+  </data>
+  <data name="chkCaseNumber.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;chkPhone.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>6, 13</value>
+  </data>
+  <data name="chkSerial.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="chkId.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="chkStatus.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="chkAddress.Text" xml:space="preserve">
+    <value>Address</value>
+  </data>
+  <data name="chkPhone.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;chkCaseType.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;chkContact.Name" xml:space="preserve">
+    <value>chkContact</value>
+  </data>
+  <data name="lblSearchBy.Text" xml:space="preserve">
+    <value>Search by:</value>
+  </data>
+  <data name="&gt;&gt;chkAddress.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="button1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>139, 331</value>
+  </data>
+  <data name="&gt;&gt;chkAny.Name" xml:space="preserve">
+    <value>chkAny</value>
+  </data>
+  <data name="button1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 23</value>
+  </data>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="chkContact.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;chkAddress.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="chkEmail.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="&gt;&gt;chkCaseType.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="chkInternalCase.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="chkCaseType.Size" type="System.Drawing.Size, System.Drawing">
+    <value>73, 17</value>
+  </data>
+  <data name="chkAny.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="&gt;&gt;chkPhone.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblSearchBy.ZOrder" xml:space="preserve">
+    <value>13</value>
+  </data>
+  <data name="chkInternalCase.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
+  </data>
+  <data name="chkContact.Size" type="System.Drawing.Size, System.Drawing">
+    <value>99, 17</value>
+  </data>
+  <data name="&gt;&gt;lblSearchBy.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;chkId.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;chkAddress.Name" xml:space="preserve">
+    <value>chkAddress</value>
+  </data>
+  <data name="&gt;&gt;chkName.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;chkInternalCase.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="chkCaseType.TabIndex" type="System.Int32, mscorlib">
+    <value>13</value>
+  </data>
+  <data name="&gt;&gt;chkCaseNumber.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;button1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;chkCaseNumber.Name" xml:space="preserve">
+    <value>chkCaseNumber</value>
+  </data>
+  <data name="&gt;&gt;chkSerial.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;chkAny.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="lblSearchBy.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 31</value>
+  </data>
+  <data name="chkPhone.Size" type="System.Drawing.Size, System.Drawing">
+    <value>57, 17</value>
+  </data>
+  <data name="chkEmail.Size" type="System.Drawing.Size, System.Drawing">
+    <value>55, 17</value>
+  </data>
+  <data name="&gt;&gt;chkEmail.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;chkStatus.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="chkAny.Text" xml:space="preserve">
+    <value>Free Text</value>
+  </data>
+  <data name="&gt;&gt;chkStatus.Name" xml:space="preserve">
+    <value>chkStatus</value>
+  </data>
+  <data name="chkAddress.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;chkCaseType.Name" xml:space="preserve">
+    <value>chkCaseType</value>
+  </data>
+  <data name="chkCaseNumber.Location" type="System.Drawing.Point, System.Drawing">
+    <value>74, 268</value>
+  </data>
+  <data name="&gt;&gt;chkAny.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;chkPhone.Name" xml:space="preserve">
+    <value>chkPhone</value>
+  </data>
+  <data name="&gt;&gt;lblSearchBy.Name" xml:space="preserve">
+    <value>lblSearchBy</value>
+  </data>
+  <data name="lblSearchBy.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;chkSerial.Name" xml:space="preserve">
+    <value>chkSerial</value>
+  </data>
+  <data name="chkSerial.Size" type="System.Drawing.Size, System.Drawing">
+    <value>92, 17</value>
+  </data>
+  <data name="&gt;&gt;chkInternalCase.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="chkCaseNumber.TabIndex" type="System.Int32, mscorlib">
+    <value>12</value>
+  </data>
+  <data name="&gt;&gt;chkSerial.ZOrder" xml:space="preserve">
+    <value>11</value>
+  </data>
+  <data name="chkInternalCase.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="chkCaseType.Location" type="System.Drawing.Point, System.Drawing">
+    <value>74, 291</value>
+  </data>
+  <data name="chkId.Size" type="System.Drawing.Size, System.Drawing">
+    <value>35, 17</value>
+  </data>
+  <data name="lblSearchBy.Size" type="System.Drawing.Size, System.Drawing">
+    <value>58, 13</value>
+  </data>
+  <data name="&gt;&gt;chkName.ZOrder" xml:space="preserve">
+    <value>12</value>
+  </data>
+  <data name="chkStatus.Location" type="System.Drawing.Point, System.Drawing">
+    <value>74, 107</value>
+  </data>
+  <data name="chkCaseNumber.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="&gt;&gt;button1.Name" xml:space="preserve">
+    <value>button1</value>
+  </data>
+  <data name="chkPhone.Text" xml:space="preserve">
+    <value>Phone</value>
+  </data>
+  <data name="chkId.Location" type="System.Drawing.Point, System.Drawing">
+    <value>74, 222</value>
+  </data>
+  <data name="chkInternalCase.Location" type="System.Drawing.Point, System.Drawing">
+    <value>74, 245</value>
+  </data>
+  <data name="&gt;&gt;chkAddress.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
+    <value>CenterParent</value>
+  </data>
+  <data name="&gt;&gt;chkInternalCase.Name" xml:space="preserve">
+    <value>chkInternalCase</value>
+  </data>
+  <data name="chkCaseNumber.Text" xml:space="preserve">
+    <value>Case number</value>
+  </data>
+  <data name="chkCaseType.Text" xml:space="preserve">
+    <value>Case type</value>
+  </data>
+  <data name="&gt;&gt;chkName.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="chkCaseType.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="&gt;&gt;chkPhone.ZOrder" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="&gt;&gt;chkEmail.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="chkEmail.Text" xml:space="preserve">
+    <value>E-Mail</value>
+  </data>
+  <data name="chkId.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="chkContact.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;chkStatus.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Search</value>
+  </data>
+  <data name="chkCaseNumber.Size" type="System.Drawing.Size, System.Drawing">
+    <value>88, 17</value>
+  </data>
+  <data name="&gt;&gt;chkContact.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="&gt;&gt;chkSerial.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="chkInternalCase.Size" type="System.Drawing.Size, System.Drawing">
+    <value>126, 17</value>
+  </data>
+  <data name="&gt;&gt;chkCaseNumber.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="chkSerial.Location" type="System.Drawing.Point, System.Drawing">
+    <value>74, 87</value>
+  </data>
+  <data name="chkSerial.Text" xml:space="preserve">
+    <value>Serial Number</value>
+  </data>
+  <data name="chkAddress.Size" type="System.Drawing.Size, System.Drawing">
+    <value>64, 17</value>
+  </data>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>frmSearch</value>
+  </data>
+  <data name="button1.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Right</value>
+  </data>
+  <data name="lblSearchBy.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="chkCaseType.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;lblSearchBy.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="chkStatus.Size" type="System.Drawing.Size, System.Drawing">
+    <value>56, 17</value>
+  </data>
+  <data name="&gt;&gt;chkInternalCase.Type" xml:space="preserve">
     <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;chkId.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;chkId.ZOrder" xml:space="preserve">
-    <value>2</value>
+  <data name="&gt;&gt;chkName.Name" xml:space="preserve">
+    <value>chkName</value>
   </data>
-  <data name="chkCaseNumber.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="chkCaseNumber.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="chkCaseNumber.Location" type="System.Drawing.Point, System.Drawing">
-    <value>74, 268</value>
-  </data>
-  <data name="chkCaseNumber.Size" type="System.Drawing.Size, System.Drawing">
-    <value>88, 17</value>
-  </data>
-  <data name="chkCaseNumber.TabIndex" type="System.Int32, mscorlib">
-    <value>12</value>
-  </data>
-  <data name="chkCaseNumber.Text" xml:space="preserve">
-    <value>Case number</value>
-  </data>
-  <data name="&gt;&gt;chkCaseNumber.Name" xml:space="preserve">
-    <value>chkCaseNumber</value>
-  </data>
-  <data name="&gt;&gt;chkCaseNumber.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;chkCaseNumber.Parent" xml:space="preserve">
+  <data name="&gt;&gt;chkContact.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;chkCaseNumber.ZOrder" xml:space="preserve">
-    <value>0</value>
+  <data name="chkName.Text" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="chkName.Location" type="System.Drawing.Point, System.Drawing">
+    <value>74, 64</value>
+  </data>
+  <data name="chkStatus.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="chkAny.Size" type="System.Drawing.Size, System.Drawing">
+    <value>71, 17</value>
+  </data>
+  <data name="&gt;&gt;chkStatus.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="&gt;&gt;chkEmail.Name" xml:space="preserve">
+    <value>chkEmail</value>
+  </data>
+  <data name="chkContact.Text" xml:space="preserve">
+    <value>Contact Person</value>
+  </data>
+  <data name="chkName.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="chkContact.Location" type="System.Drawing.Point, System.Drawing">
+    <value>74, 176</value>
+  </data>
+  <data name="chkStatus.Text" xml:space="preserve">
+    <value>Status</value>
+  </data>
+  <data name="chkInternalCase.Text" xml:space="preserve">
+    <value>Internal Case number</value>
+  </data>
+  <data name="&gt;&gt;chkContact.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="chkAddress.Location" type="System.Drawing.Point, System.Drawing">
+    <value>74, 153</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
-    <value>6, 13</value>
-  </data>
-  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>226, 366</value>
-  </data>
-  <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
-    <value>CenterParent</value>
-  </data>
-  <data name="$this.Text" xml:space="preserve">
-    <value>Search</value>
-  </data>
-  <data name="&gt;&gt;$this.Name" xml:space="preserve">
-    <value>frmSearch</value>
-  </data>
-  <data name="&gt;&gt;$this.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
+  <metadata name="$this.Language" type="System.Globalization.CultureInfo, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>he-IL</value>
+  </metadata>
 </root>

@@ -21,13 +21,14 @@ namespace ContactsManager.Classes
         public Address Address { get; set; } = null;
         public string Fax { get; set; } = "";
         public string CaseNumber { get; set; } = "";
+
+        public string CaseType { get; set; } = "";
         public string Id { get; set; } = "";
         public string PakeedShouma { get; set; } = "";
         public string Holeya { get; set; } = "";
 
         public Contact()
         {
-
         }
         public Contact(string name):this()
         {
@@ -50,6 +51,7 @@ namespace ContactsManager.Classes
                 new XElement(nameof(Phone3), Phone3),
                 new XElement(nameof(PakeedShouma), PakeedShouma),
                 new XElement(nameof(Holeya),Holeya),
+                new XElement(nameof(CaseType), CaseType),
                 new XElement(nameof(Address),
                     new XAttribute(nameof(Address.City), Address == null? "" : Address.City ),
                     new XAttribute(nameof(Address.Street), Address == null ? "":Address.Street),
@@ -72,11 +74,55 @@ namespace ContactsManager.Classes
             Holeya = node.Element(nameof(Holeya)) == null ? "" : node.Element(nameof(Holeya))?.Value;
             Id = node.Element(nameof(Id)) == null ? "" : node.Element(nameof(Id)).Value;
             CaseNumber = node.Element(nameof(CaseNumber)) == null ? "" : node.Element(nameof(CaseNumber))?.Value;
+            CaseType = node.Element(nameof(CaseType)) == null ? "" : node.Element(nameof(CaseType))?.Value;
             Address = node.Element(nameof(Address)) == null ? new Address("", "", "") :
                 new Address(
                  node.Element(nameof(Address)).Attribute(nameof(Address.City)) == null ? "" : node.Element(nameof(Address)).Attribute(nameof(Address.City)).Value,
                 node.Element(nameof(Address)).Attribute(nameof(Address.Street)) == null ? "" : node.Element(nameof(Address)).Attribute(nameof(Address.Street)).Value,
                 node.Element(nameof(Address)).Attribute(nameof(Address.ZipCode)) == null ? "" : node.Element(nameof(Address)).Attribute(nameof(Address.ZipCode)).Value);
+        }
+
+        public override string ToString()
+        {
+            StringBuilder sb = new StringBuilder();
+            sb.Append(base.ToString());
+            sb.Append("+Name:");
+            sb.Append(Name);
+            sb.Append("+Status:");
+            sb.Append(Status);
+            sb.Append("+InternalSerialNumber:");
+            sb.Append(InternalSerialNumber);
+            sb.Append("+ContactPerson:");
+            sb.Append(ContactPerson);
+            sb.Append("+Notes:");
+            sb.Append(Notes);
+            sb.Append("+Email:");
+            sb.Append(Email);
+            sb.Append("+Fax:");
+            sb.Append(Fax);
+            sb.Append("+Phone1:");
+            sb.Append(Phone1);
+            sb.Append("+Phone2:");
+            sb.Append(Phone2);
+            sb.Append("+Phone3:");
+            sb.Append(Phone1);
+            sb.Append("+PakeedShouma:");
+            sb.Append(PakeedShouma);
+            sb.Append("+Holeya:");
+            sb.Append(Holeya);
+            sb.Append("+Id:");
+            sb.Append(Id);
+            sb.Append("+CaseNumber:");
+            sb.Append(CaseNumber);
+            sb.Append("+CaseType:");
+            sb.Append(CaseType);
+            sb.Append("+Address.City:");
+            sb.Append(Address.City);
+            sb.Append("+Address.Street:");
+            sb.Append(Address.Street);
+            sb.Append("+Address.ZipCode:");
+            sb.Append(Address.ZipCode);
+            return sb.ToString();
         }
     }
 }
